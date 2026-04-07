@@ -97,8 +97,8 @@
             </div>
             <i class="fas fa-chevron-right text-[8px] opacity-0 group-hover:opacity-100 transition-all"></i>
             <div class="month-dropdown">
-                <a href="${prefix}months/${m.id}/${m.id}-kids.html" class="block text-emerald-700 hover:text-emerald-900 font-bold text-sm mb-2">Kids Version</a>
-                <a href="${prefix}months/${m.id}/${m.id}-elders.html" class="block text-slate-700 hover:text-slate-900 font-bold text-sm">Elders Version</a>
+                <a href="${prefix}months/${m.id}/${m.id}-kids.html" class="block text-emerald-700 hover:text-emerald-900 font-bold text-sm mb-2">Kids</a>
+                <a href="${prefix}months/${m.id}/${m.id}-elders.html" class="block text-slate-700 hover:text-slate-900 font-bold text-sm">Elders</a>
             </div>
         </div>
     `,
@@ -108,15 +108,35 @@
   const sidebarHtml = `
     <aside class="w-[340px] hidden lg:block sticky top-0 h-screen">
       <div class="glass-sidebar flex flex-col p-8">
-        <div class="flex items-center gap-4 mb-10 px-2 cursor-pointer" onclick="window.location.href='${prefix}index.html'">
-            <div class="w-12 h-12 bg-emerald-600 rounded-[1.2rem] flex items-center justify-center shadow-2xl shadow-emerald-200 rotate-3">
-                <i class="fas fa-quran text-white text-xl"></i>
-            </div>
-            <div>
-                <h1 class="text-lg font-black tracking-tighter leading-none">FAIZAN</h1>
-                <p class="text-[10px] font-bold text-emerald-600 tracking-[0.3em]">ONLINE ACADEMY</p>
-            </div>
-        </div>
+       <div class="flex items-center gap-4 mb-10 px-2 group cursor-pointer">
+  <div class="relative flex-shrink-0">
+    <div class="absolute inset-0 bg-emerald-500/20 blur-lg rounded-full animate-pulse group-hover:bg-emerald-500/40 transition-all"></div>
+    
+    <div class="relative w-14 h-14 bg-white p-2 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 flex items-center justify-center overflow-hidden">
+      <img
+        src="../../assets/image/logo.png"
+        alt="Academy Official Logo"
+        class="w-full h-full object-contain transform group-hover:scale-110 transition-transform duration-500"
+      />
+    </div>
+    
+    <div class="absolute -bottom-1 -right-1 w-4 h-4 bg-white rounded-full flex items-center justify-center shadow-sm">
+      <div class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
+    </div>
+  </div>
+
+  <div class="flex flex-col justify-center">
+    <h1 class="text-xl font-[1000] tracking-tight text-slate-800 leading-tight">
+      FAIZAN
+    </h1>
+    <div class="flex items-center gap-1.5">
+        <span class="w-3 h-[2px] bg-emerald-500 rounded-full"></span>
+        <p class="text-[9px] font-black text-emerald-600 tracking-[0.25em] uppercase whitespace-nowrap">
+            Online Academy
+        </p>
+    </div>
+  </div>
+</div>
 
         <div class="flex-1 overflow-y-auto custom-scroll pr-4 -mr-4">
             <p class="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-6 ml-2">Islamic Calendar</p>
