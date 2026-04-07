@@ -126,7 +126,7 @@
         </div>
 
         <div class="mt-6 pt-6 border-t border-slate-100">
-            <a href="index.html">
+            <a href="https://aliahmadhafiz-design.github.io/demo-weeklyvideos/">
               <button
                 onclick="toggleProfileModal()"
                 class="w-full bg-slate-900 text-white p-4 rounded-[1.5rem] text-xs font-bold hover:bg-emerald-800 transition shadow-xl mb-2"
