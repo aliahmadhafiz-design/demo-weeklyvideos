@@ -3,1647 +3,1136 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Faizan Academy | Ramadan Month Page - Ultimate Edition</title>
+    <title>Faizan Online Academy | Weekly Videos</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link
-      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Gulzar&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-    <link rel="stylesheet" href="../../assets/style/global.css" />
+    <link rel="stylesheet" href="assets/style/global.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <style>
-      :root {
-        --accent: #10b981;
-        --accent-glow: rgba(16, 185, 129, 0.3);
-      }
-
-      body {
-        font-family: "Plus Jakarta Sans", sans-serif;
-        background: #f0f2f5;
-        background-image:
-          radial-gradient(
-            at 0% 0%,
-            rgba(16, 185, 129, 0.05) 0px,
-            transparent 50%
-          ),
-          radial-gradient(
-            at 100% 100%,
-            rgba(217, 119, 6, 0.05) 0px,
-            transparent 50%
-          );
-        min-height: 100vh;
-        overflow-x: hidden;
-      }
-
-      .custom-scroll::-webkit-scrollbar {
-        width: 3px;
-      }
-
-      .custom-scroll::-webkit-scrollbar-track {
-        background: transparent;
-      }
-
-      .custom-scroll::-webkit-scrollbar-thumb {
-        background: linear-gradient(
-          to bottom,
-          transparent,
-          #d97706,
-          transparent
-        );
-        border-radius: 10px;
-      }
-
-      .urdu-rtl {
-        font-family: "Gulzar", "Plus Jakarta Sans", sans-serif;
-      }
-
-      .urdu-rtl .rtl-text {
-        direction: rtl;
-        unicode-bidi: isolate-override;
-        text-align: right;
-      }
-
-      .urdu-rtl button,
-      .urdu-rtl .flex,
-      .urdu-rtl .inline-flex,
-      .urdu-rtl .grid {
-        direction: ltr;
-      }
-
-      /* Video Card Premium Style (Preserved) */
-      .video-card-premium {
-        background: white;
-        border-radius: 35px;
-        transition: all 0.5s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-        border: 1px solid #f0f0f0;
-        overflow: hidden;
-        box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.02);
-      }
-
-      .video-card-premium:hover {
-        box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.12);
-        transform: translateY(-8px);
-      }
-
-      /* Enhanced Attractive Language Tabs */
-      .lang-tab-wrapper {
-        display: flex;
-        justify-content: center;
-        margin-bottom: 2rem;
-      }
-
-      .lang-tab {
-        transition: all 0.3s cubic-bezier(0.34, 1.2, 0.64, 1);
-        backdrop-filter: blur(4px);
-      }
-
-      .lang-tab.active-tab {
-        background: linear-gradient(135deg, #064e3b 0%, #0b5e42 100%);
-        color: white;
-        box-shadow: 0 20px 35px -12px rgba(6, 78, 59, 0.5);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-      }
-
-      .lang-tab:not(.active-tab) {
-        background: rgba(255, 255, 255, 0.7);
-        backdrop-filter: blur(12px);
-        border: 1px solid white;
-        color: #1e293b;
-      }
-
-      .lang-tab:not(.active-tab):hover {
-        background: white;
-        transform: translateY(-3px);
-        box-shadow: 0 20px 30px -12px rgba(16, 185, 129, 0.2);
-        border-color: #10b981;
-      }
-
-      .week-tab {
-        transition: all 0.2s ease;
-        font-weight: 800;
-      }
-
-      .week-tab.active-week {
-        background: #10b981;
-        color: white;
-        box-shadow: 0 8px 18px rgba(16, 185, 129, 0.3);
-        transform: scale(1.02);
-      }
-
-      /* NETFLIX-STYLE PREMIUM POPUP */
-      .netflix-popup,
-      .links-popup {
-        transition: 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-      }
-
-      .modal-hide {
-        opacity: 0;
-        visibility: hidden;
-        pointer-events: none;
-      }
-
-      .netflix-popup:not(.modal-hide),
-      .links-popup:not(.modal-hide) {
-        opacity: 1;
-        visibility: visible;
-        pointer-events: auto;
-      }
-
-      .netflix-popup {
-        background: rgba(0, 0, 0, 0.85);
-        backdrop-filter: blur(12px);
-      }
-
-      .popup-inner {
-        background: #141414;
-        border-radius: 2rem;
-        overflow: hidden;
-        box-shadow: 0 40px 80px rgba(0, 0, 0, 0.6);
-      }
-
-      .questions-panel {
-        background: #1a1a1a;
-        border-left: 1px solid #2c2c2c;
-      }
-
-      .q-item {
-        background: #0f0f0f;
+      .arabic-text {
+        font-family: "Noto Sans Arabic", sans-serif;
+        font-size: 2rem;
+        font-weight: bold;
+        text-align: center;
+        color: #065f46;
+        background: linear-gradient(90deg, #d1fae5, #10b981);
+        padding: 1rem;
         border-radius: 1rem;
-        transition: all 0.2s;
-        border: 1px solid #2a2a2a;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        animation: fadeIn 2s ease-in-out;
       }
 
-      .q-item:hover {
-        background: #1e1e1e;
-        border-color: #10b981;
-      }
-
-      .copy-questions-btn {
-        transition: all 0.2s;
-      }
-
-      .copy-questions-btn:active {
-        transform: scale(0.96);
-      }
-
-      .link-item-card {
-        transition: all 0.2s;
-        border-left: 3px solid transparent;
-      }
-
-      .link-item-card:hover {
-        background: #f0fdf4;
-        border-left-color: #10b981;
-      }
-
-      .thumbnail-glow {
-        transition: transform 0.6s ease;
-      }
-
-      .video-card-premium:hover .thumbnail-glow {
-        transform: scale(1.03);
-      }
-    </style>
-    <style>
-      /* Base Tab Styling */
-      .popup-week-tab {
-        background-color: transparent;
-        color: #64748b; /* slate-500 */
-        transition: all 0.3s ease;
-      }
-
-      /* ACTIVE STATE - This is what fixes your background color issue */
-      .popup-week-tab.active-popup-week {
-        background-color: #10b981 !important; /* emerald-600 */
-        color: #ffffff !important;
-        font-weight: 900 !important;
-        box-shadow: 0 10px 15px -3px rgba(16, 185, 129, 0.3);
-        transform: translateY(-1px);
-      }
-
-      /* Hover state for inactive tabs */
-      .popup-week-tab:hover:not(.active-popup-week) {
-        background-color: #f1f5f9; /* slate-100 */
-        color: #1e293b; /* slate-800 */
-      }
-
-      /* Custom Scrollbar for the links list */
-      .custom-scroll::-webkit-scrollbar {
-        width: 6px;
-      }
-      .custom-scroll::-webkit-scrollbar-track {
-        background: #f1f5f9;
-        border-radius: 10px;
-      }
-      .custom-scroll::-webkit-scrollbar-thumb {
-        background: #cbd5e1;
-        border-radius: 10px;
-      }
-      .custom-scroll::-webkit-scrollbar-thumb:hover {
-        background: #10b981;
+      @keyframes fadeIn {
+        0% {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
       }
     </style>
   </head>
-
   <body class="text-slate-800">
-    <!-- MONTH PAGE CONTENT -->
-    <section class="max-w-7xl mx-auto py-4 custom-scroll">
-      <!-- HERO SECTION -->
-      <section
-        class="relative min-h-[300px] md:min-h-[380px] flex flex-col items-center justify-center bg-[#021812] rounded-[3.5rem] p-8 md:p-12 text-white overflow-hidden mb-12 shadow-[0_35px_100px_-20px_rgba(6,78,59,0.5)] border border-emerald-500/10 text-center"
-      >
-        <div class="absolute inset-0 z-0">
-          <div
-            class="absolute top-[-20%] left-[-10%] w-[60%] h-[70%] bg-emerald-500/30 blur-[120px] rounded-full animate-pulse"
-          ></div>
-          <div
-            class="absolute bottom-[-20%] right-[-10%] w-[60%] h-[70%] bg-teal-800/20 blur-[120px] rounded-full"
-          ></div>
-          <div
-            class="absolute inset-0 opacity-[0.05]"
-            style="
-              background-image: radial-gradient(#fff 1px, transparent 1px);
-              background-size: 30px 30px;
-            "
-          ></div>
-        </div>
-
-        <div class="relative z-10 flex flex-col items-center">
-          <div
-            class="inline-flex items-center gap-3 bg-white/5 backdrop-blur-2xl px-8 py-3 rounded-2xl border border-white/10 mb-8 transform hover:scale-105 transition-transform duration-500 shadow-xl"
-          >
-            <i class="fas fa-calendar-alt text-emerald-400"></i>
-            <span
-              class="text-sm md:text-base font-black uppercase tracking-[0.4em] text-emerald-100"
-            >
-              Ramadan 1446
-            </span>
-          </div>
-
-          <h1
-            class="text-6xl md:text-[7rem] font-black leading-none tracking-tighter mb-4"
-          >
-            <span class="relative">
-              <span
-                class="absolute inset-0 text-emerald-400 blur-3xl opacity-30"
-                >KIDS</span
-              >
-              <span
-                class="relative text-transparent bg-clip-text bg-gradient-to-b from-white via-emerald-100 to-emerald-400"
-              >
-                KIDS
-              </span>
-            </span>
-          </h1>
-
-          <div class="flex items-center gap-4 mt-2">
-            <div
-              class="h-[2px] w-12 bg-gradient-to-r from-transparent to-emerald-500"
-            ></div>
-            <p
-              class="text-emerald-300 font-bold uppercase tracking-[0.5em] text-[10px] md:text-xs"
-            >
-              Weekly Videos
-            </p>
-            <div
-              class="h-[2px] w-12 bg-gradient-to-l from-transparent to-emerald-500"
-            ></div>
-          </div>
-        </div>
-
-        <div
-          class="absolute left-10 top-1/2 -translate-y-1/2 opacity-10 hidden md:block"
-        >
-          <i class="fas fa-moon text-9xl -rotate-12"></i>
-        </div>
-        <div
-          class="absolute right-10 top-1/2 -translate-y-1/2 opacity-10 hidden md:block"
-        >
-          <i class="fas fa-star text-8xl rotate-12"></i>
-        </div>
-      </section>
-
-      <!-- CENTER POSITION LANGUAGE TABS -->
-      <div class="lang-tab-wrapper">
-        <div
-          class="inline-flex gap-4 p-1.5 bg-white/30 backdrop-blur-sm rounded-full shadow-lg border border-white/40"
-        >
-          <button
-            id="urduTabBtn"
-            class="lang-tab px-10 py-4 rounded-full font-black text-base tracking-wide flex items-center gap-3 active-tab transition-all duration-300"
-          >
-            <i class="fas fa-language text-lg"></i>
-            <span>URDU </span>
-          </button>
-          <button
-            id="englishTabBtn"
-            class="lang-tab px-10 py-4 rounded-full font-black text-base tracking-wide flex items-center gap-3 transition-all duration-300"
-          >
-            <i class="fas fa-globe-americas text-lg"></i>
-            <span> ENGLISH </span>
-          </button>
-        </div>
-      </div>
-
-      <!-- WEEK TABS (4 Weeks) -->
-      <div class="flex flex-wrap justify-center gap-4 mb-12">
-        <button
-          data-week="1"
-          class="week-tab active-week bg-emerald-600 text-white px-9 py-3.5 rounded-[2rem] font-black text-sm shadow-xl transition-all"
-        >
-          ✨ Week 1
-        </button>
-        <button
-          data-week="2"
-          class="week-tab bg-white text-slate-700 px-9 py-3.5 rounded-[2rem] font-black text-sm shadow-md hover:bg-emerald-50 transition-all"
-        >
-          📖 Week 2
-        </button>
-        <button
-          data-week="3"
-          class="week-tab bg-white text-slate-700 px-9 py-3.5 rounded-[2rem] font-black text-sm shadow-md hover:bg-emerald-50 transition-all"
-        >
-          🕌 Week 3
-        </button>
-        <button
-          data-week="4"
-          class="week-tab bg-white text-slate-700 px-9 py-3.5 rounded-[2rem] font-black text-sm shadow-md hover:bg-emerald-50 transition-all"
-        >
-          🌟 Week 4
-        </button>
-      </div>
-
-      <!-- VIDEO GRID -->
-      <div
-        id="videoGrid"
-        class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 pb-12"
-      ></div>
-
-      <!-- LINKS BUTTON (Popup for Kids Urdu Links) -->
-      <div class="flex justify-center mt-8 mb-16">
-        <button
-          id="openLinksPopupBtn"
-          class="group bg-gradient-to-r from-amber-500 to-orange-600 hover:from-emerald-600 hover:to-teal-700 text-white px-10 py-5 rounded-[2.5rem] font-black text-lg tracking-wide shadow-2xl transition-all duration-300 flex items-center gap-4 transform hover:scale-105"
-        >
-          <i class="fas fa-link text-xl group-hover:rotate-12 transition"></i>
-          <span>🔗 VIDEOS LINKS FOR This Month</span>
-          <i
-            class="fas fa-arrow-right text-sm group-hover:translate-x-1 transition"
-          ></i>
-        </button>
-      </div>
-    </section>
-
-    <!-- NETFLIX-STYLE VIDEO POPUP (2 Columns: Video + Questions) -->
-    <div
-      id="videoDetailsPopup"
-      class="modal-hide fixed inset-0 z-[300] flex items-center justify-center p-4 md:p-8 bg-slate-900/60 backdrop-blur-md transition-all duration-300"
-    >
-      <div
-        class="popup-inner w-full max-w-6xl bg-white rounded-[2.5rem] overflow-hidden shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)] flex flex-col md:flex-row border border-white/20"
-      >
-        <div class="md:w-1/2 bg-slate-950 relative group">
-          <video
-            id="popupVideoPlayer"
-            class="w-full h-full object-cover min-h-[300px] md:min-h-[550px]"
-            controls
-            autoplay
-          >
-            <source src="" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-
-          <button
-            id="closePopupBtnInside"
-            class="absolute top-6 left-6 bg-white/10 backdrop-blur-md hover:bg-red-500 text-white w-12 h-12 rounded-2xl flex items-center justify-center transition-all duration-300 shadow-xl border border-white/20"
-          >
-            <i class="fas fa-times text-xl"></i>
-          </button>
-
-          <div
-            class="absolute inset-0 pointer-events-none bg-gradient-to-t from-black/40 to-transparent"
-          ></div>
-        </div>
-
-        <div
-          class="md:w-1/2 questions-panel p-8 md:p-12 flex flex-col overflow-y-auto custom-scroll max-h-[90vh] bg-slate-50/50"
-        >
-          <div class="flex flex-col gap-4 mb-8">
-            <div class="flex justify-between items-center flex-wrap gap-4">
-              <h3
-                class="text-3xl font-black text-slate-800 tracking-tight flex items-center gap-3"
-              >
-                <span class="p-2 bg-emerald-100 rounded-lg text-emerald-600">
-                  <i class="fas fa-play-circle"></i>
-                </span>
-                <span id="popupVideoTitle">Quiz Lesson</span>
-              </h3>
-
-              <button
-                id="copyQuestionsOnlyBtn"
-                class="group bg-slate-900 hover:bg-emerald-600 text-white px-6 py-3 rounded-xl text-xs font-bold uppercase tracking-widest shadow-lg flex items-center gap-2 transition-all active:scale-95"
-              >
-                <i
-                  class="fas fa-copy group-hover:rotate-12 transition-transform"
-                ></i>
-                Copy Questions
-              </button>
-            </div>
-
-            <p
-              class="text-slate-500 text-sm font-medium flex items-center gap-2 bg-white p-3 rounded-xl border border-slate-200"
-            >
-              <i class="fas fa-info-circle text-indigo-500"></i>
-              Student instructions: Watch carefully to unlock the answers below.
-            </p>
-          </div>
-
-          <div id="questionsListContainer" class="space-y-4 flex-1"></div>
-
-          <div class="mt-10 pt-6 border-t border-slate-200">
-            <div
-              class="bg-indigo-50 rounded-2xl p-4 flex items-center gap-4 border border-indigo-100"
-            >
+    <div class="flex h-screen overflow-hidden">
+      <aside class="w-[340px] hidden lg:block sticky top-0 h-screen">
+        <div class="glass-sidebar flex flex-col p-8">
+          <div class="flex items-center gap-4 mb-10 px-2 group cursor-pointer">
+            <div class="relative flex-shrink-0">
               <div
-                class="bg-indigo-500 text-white w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 shadow-md"
+                class="absolute inset-0 bg-emerald-500/20 blur-lg rounded-full animate-pulse group-hover:bg-emerald-500/40 transition-all"
+              ></div>
+
+              <div
+                class="relative w-14 h-14 bg-white p-2 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 flex items-center justify-center overflow-hidden"
               >
-                <i class="fas fa-lightbulb"></i>
+                <img
+                  src="assets/image/logo.png"
+                  alt="Academy Official Logo"
+                  class="w-full h-full object-contain transform group-hover:scale-110 transition-transform duration-500"
+                />
               </div>
-              <p class="text-indigo-900 text-xs font-bold leading-relaxed">
-                TEACHER TIP:
-                <span class="font-medium text-indigo-700"
-                  >Paste the questions directly into your classroom chat for
-                  student engagement.</span
+
+              <div
+                class="absolute -bottom-1 -right-1 w-4 h-4 bg-white rounded-full flex items-center justify-center shadow-sm"
+              >
+                <div
+                  class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"
+                ></div>
+              </div>
+            </div>
+
+            <div class="flex flex-col justify-center">
+              <h1
+                class="text-xl font-[1000] tracking-tight text-slate-800 leading-tight"
+              >
+                FAIZAN
+              </h1>
+              <div class="flex items-center gap-1.5">
+                <span class="w-3 h-[2px] bg-emerald-500 rounded-full"></span>
+                <p
+                  class="text-[9px] font-black text-emerald-600 tracking-[0.25em] uppercase whitespace-nowrap"
                 >
+                  Online Academy
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex-1 overflow-y-auto custom-scroll pr-4 -mr-4">
+            <p
+              class="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-6 ml-2"
+            >
+              Islamic Calendar
+            </p>
+            <div id="monthList" class="space-y-3">
+              <div
+                class="month-card-item p-4 rounded-[1.5rem] cursor-pointer flex items-center justify-between group"
+              >
+                <div class="active-indicator"></div>
+                <div class="flex items-center gap-4">
+                  <div
+                    class="w-10 h-10 rounded-xl bg-slate-100 flex items-center justify-center group-hover:bg-emerald-100 transition-colors"
+                  >
+                    <i
+                      class="fas fa-star-and-crescent text-slate-400 group-hover:text-emerald-600"
+                    ></i>
+                  </div>
+                  <span class="text-sm font-bold tracking-tight">Muharram</span>
+                </div>
+                <i
+                  class="fas fa-chevron-right text-[8px] opacity-0 group-hover:opacity-100 transition-all"
+                ></i>
+                <div class="month-dropdown">
+                  <a
+                    href="months/muharram/muharram-kids.html"
+                    class="text-emerald-700 hover:text-emerald-900"
+                    >Kids</a
+                  >
+                  <a
+                    href="months/muharram/muharram-elders.html"
+                    class="text-slate-700 hover:text-slate-900 mt-2"
+                    >Elders</a
+                  >
+                </div>
+              </div>
+              <div
+                class="month-card-item p-4 rounded-[1.5rem] cursor-pointer flex items-center justify-between group"
+              >
+                <div class="active-indicator"></div>
+                <div class="flex items-center gap-4">
+                  <div
+                    class="w-10 h-10 rounded-xl bg-slate-100 flex items-center justify-center group-hover:bg-emerald-100 transition-colors"
+                  >
+                    <i
+                      class="fas fa-leaf text-slate-400 group-hover:text-emerald-600"
+                    ></i>
+                  </div>
+                  <span class="text-sm font-bold tracking-tight">Safar</span>
+                </div>
+                <i
+                  class="fas fa-chevron-right text-[8px] opacity-0 group-hover:opacity-100 transition-all"
+                ></i>
+                <div class="month-dropdown">
+                  <a
+                    href="months/safar/safar-kids.html"
+                    class="text-emerald-700 hover:text-emerald-900"
+                    >Kids</a
+                  >
+                  <a
+                    href="months/safar/safar-elders.html"
+                    class="text-slate-700 hover:text-slate-900 mt-2"
+                    >Elders</a
+                  >
+                </div>
+              </div>
+              <div
+                class="month-card-item p-4 rounded-[1.5rem] cursor-pointer flex items-center justify-between group"
+              >
+                <div class="active-indicator"></div>
+                <div class="flex items-center gap-4">
+                  <div
+                    class="w-10 h-10 rounded-xl bg-slate-100 flex items-center justify-center group-hover:bg-emerald-100 transition-colors"
+                  >
+                    <i
+                      class="fas fa-dove text-slate-400 group-hover:text-emerald-600"
+                    ></i>
+                  </div>
+                  <span class="text-sm font-bold tracking-tight"
+                    >Rabi' al-Awwal</span
+                  >
+                </div>
+                <i
+                  class="fas fa-chevron-right text-[8px] opacity-0 group-hover:opacity-100 transition-all"
+                ></i>
+                <div class="month-dropdown">
+                  <a
+                    href="months/rabiulawwal/rabiulawwal-kids.html"
+                    class="text-emerald-700 hover:text-emerald-900"
+                    >Kids</a
+                  >
+                  <a
+                    href="months/rabiulawwal/rabiulawwal-elders.html"
+                    class="text-slate-700 hover:text-slate-900 mt-2"
+                    >Elders</a
+                  >
+                </div>
+              </div>
+              <div
+                class="month-card-item p-4 rounded-[1.5rem] cursor-pointer flex items-center justify-between group"
+              >
+                <div class="active-indicator"></div>
+                <div class="flex items-center gap-4">
+                  <div
+                    class="w-10 h-10 rounded-xl bg-slate-100 flex items-center justify-center group-hover:bg-emerald-100 transition-colors"
+                  >
+                    <i
+                      class="fas fa-book-open text-slate-400 group-hover:text-emerald-600"
+                    ></i>
+                  </div>
+                  <span class="text-sm font-bold tracking-tight"
+                    >Rabi' al-Thani</span
+                  >
+                </div>
+                <i
+                  class="fas fa-chevron-right text-[8px] opacity-0 group-hover:opacity-100 transition-all"
+                ></i>
+                <div class="month-dropdown">
+                  <a
+                    href="months/rabiulsani/rabiulsani-kids.html"
+                    class="text-emerald-700 hover:text-emerald-900"
+                    >Kids</a
+                  >
+                  <a
+                    href="months/rabiulsani/rabiulsani-elders.html"
+                    class="text-slate-700 hover:text-slate-900 mt-2"
+                    >Elders</a
+                  >
+                </div>
+              </div>
+              <div
+                class="month-card-item p-4 rounded-[1.5rem] cursor-pointer flex items-center justify-between group"
+              >
+                <div class="active-indicator"></div>
+                <div class="flex items-center gap-4">
+                  <div
+                    class="w-10 h-10 rounded-xl bg-slate-100 flex items-center justify-center group-hover:bg-emerald-100 transition-colors"
+                  >
+                    <i
+                      class="fas fa-hands-praying text-slate-400 group-hover:text-emerald-600"
+                    ></i>
+                  </div>
+                  <span class="text-sm font-bold tracking-tight"
+                    >Jumada al-Ula</span
+                  >
+                </div>
+                <i
+                  class="fas fa-chevron-right text-[8px] opacity-0 group-hover:opacity-100 transition-all"
+                ></i>
+                <div class="month-dropdown">
+                  <a
+                    href="months/jamadiulula/jamadiulula-kids.html"
+                    class="text-emerald-700 hover:text-emerald-900"
+                    >Kids</a
+                  >
+                  <a
+                    href="months/jamadiulula/jamadiulula-elders.html"
+                    class="text-slate-700 hover:text-slate-900 mt-2"
+                    >Elders</a
+                  >
+                </div>
+              </div>
+              <div
+                class="month-card-item p-4 rounded-[1.5rem] cursor-pointer flex items-center justify-between group"
+              >
+                <div class="active-indicator"></div>
+                <div class="flex items-center gap-4">
+                  <div
+                    class="w-10 h-10 rounded-xl bg-slate-100 flex items-center justify-center group-hover:bg-emerald-100 transition-colors"
+                  >
+                    <i
+                      class="fas fa-mosque text-slate-400 group-hover:text-emerald-600"
+                    ></i>
+                  </div>
+                  <span class="text-sm font-bold tracking-tight"
+                    >Jumada al-Thaniya</span
+                  >
+                </div>
+                <i
+                  class="fas fa-chevron-right text-[8px] opacity-0 group-hover:opacity-100 transition-all"
+                ></i>
+                <div class="month-dropdown">
+                  <a
+                    href="months/jamadiulsani/jamadiulsani-kids.html"
+                    class="text-emerald-700 hover:text-emerald-900"
+                    >Kids</a
+                  >
+                  <a
+                    href="months/jamadiulsani/jamadiulsani-elders.html"
+                    class="text-slate-700 hover:text-slate-900 mt-2"
+                    >Elders</a
+                  >
+                </div>
+              </div>
+              <div
+                class="month-card-item p-4 rounded-[1.5rem] cursor-pointer flex items-center justify-between group"
+              >
+                <div class="active-indicator"></div>
+                <div class="flex items-center gap-4">
+                  <div
+                    class="w-10 h-10 rounded-xl bg-slate-100 flex items-center justify-center group-hover:bg-emerald-100 transition-colors"
+                  >
+                    <i
+                      class="fas fa-moon text-slate-400 group-hover:text-emerald-600"
+                    ></i>
+                  </div>
+                  <span class="text-sm font-bold tracking-tight">Rajab</span>
+                </div>
+                <i
+                  class="fas fa-chevron-right text-[8px] opacity-0 group-hover:opacity-100 transition-all"
+                ></i>
+                <div class="month-dropdown">
+                  <a
+                    href="months/rajab/rajab-kids.html"
+                    class="text-emerald-700 hover:text-emerald-900"
+                    >Kids</a
+                  >
+                  <a
+                    href="months/rajab/rajab-elders.html"
+                    class="text-slate-700 hover:text-slate-900 mt-2"
+                    >Elders</a
+                  >
+                </div>
+              </div>
+              <div
+                class="month-card-item p-4 rounded-[1.5rem] cursor-pointer flex items-center justify-between group"
+              >
+                <div class="active-indicator"></div>
+                <div class="flex items-center gap-4">
+                  <div
+                    class="w-10 h-10 rounded-xl bg-slate-100 flex items-center justify-center group-hover:bg-emerald-100 transition-colors"
+                  >
+                    <i
+                      class="fas fa-kaaba text-slate-400 group-hover:text-emerald-600"
+                    ></i>
+                  </div>
+                  <span class="text-sm font-bold tracking-tight">Sha'ban</span>
+                </div>
+                <i
+                  class="fas fa-chevron-right text-[8px] opacity-0 group-hover:opacity-100 transition-all"
+                ></i>
+                <div class="month-dropdown">
+                  <a
+                    href="months/shaban/shaban-kids.html"
+                    class="text-emerald-700 hover:text-emerald-900"
+                    >Kids</a
+                  >
+                  <a
+                    href="months/shaban/shaban-elders.html"
+                    class="text-slate-700 hover:text-slate-900 mt-2"
+                    >Elders</a
+                  >
+                </div>
+              </div>
+              <div
+                class="month-card-item p-4 rounded-[1.5rem] cursor-pointer flex items-center justify-between group"
+              >
+                <div class="active-indicator"></div>
+                <div class="flex items-center gap-4">
+                  <div
+                    class="w-10 h-10 rounded-xl bg-slate-100 flex items-center justify-center group-hover:bg-emerald-100 transition-colors"
+                  >
+                    <i
+                      class="fas fa-quran text-slate-400 group-hover:text-emerald-600"
+                    ></i>
+                  </div>
+                  <span class="text-sm font-bold tracking-tight">Ramadan</span>
+                </div>
+                <i
+                  class="fas fa-chevron-right text-[8px] opacity-0 group-hover:opacity-100 transition-all"
+                ></i>
+                <div class="month-dropdown">
+                  <a
+                    href="months/ramzan/ramzan-kids.html"
+                    class="text-emerald-700 hover:text-emerald-900"
+                    >Kids</a
+                  >
+                  <a
+                    href="months/ramzan/ramzan-elders.html"
+                    class="text-slate-700 hover:text-slate-900 mt-2"
+                    >Elders</a
+                  >
+                </div>
+              </div>
+              <div
+                class="month-card-item p-4 rounded-[1.5rem] cursor-pointer flex items-center justify-between group"
+              >
+                <div class="active-indicator"></div>
+                <div class="flex items-center gap-4">
+                  <div
+                    class="w-10 h-10 rounded-xl bg-slate-100 flex items-center justify-center group-hover:bg-emerald-100 transition-colors"
+                  >
+                    <i
+                      class="fas fa-gift text-slate-400 group-hover:text-emerald-600"
+                    ></i>
+                  </div>
+                  <span class="text-sm font-bold tracking-tight">Shawwal</span>
+                </div>
+                <i
+                  class="fas fa-chevron-right text-[8px] opacity-0 group-hover:opacity-100 transition-all"
+                ></i>
+                <div class="month-dropdown">
+                  <a
+                    href="months/shawwal/shawwal-kids.html"
+                    class="text-emerald-700 hover:text-emerald-900"
+                    >Kids</a
+                  >
+                  <a
+                    href="months/shawwal/shawwal-elders.html"
+                    class="text-slate-700 hover:text-slate-900 mt-2"
+                    >Elders</a
+                  >
+                </div>
+              </div>
+              <div
+                class="month-card-item p-4 rounded-[1.5rem] cursor-pointer flex items-center justify-between group"
+              >
+                <div class="active-indicator"></div>
+                <div class="flex items-center gap-4">
+                  <div
+                    class="w-10 h-10 rounded-xl bg-slate-100 flex items-center justify-center group-hover:bg-emerald-100 transition-colors"
+                  >
+                    <i
+                      class="fas fa-tree text-slate-400 group-hover:text-emerald-600"
+                    ></i>
+                  </div>
+                  <span class="text-sm font-bold tracking-tight"
+                    >Dhul Qa'dah</span
+                  >
+                </div>
+                <i
+                  class="fas fa-chevron-right text-[8px] opacity-0 group-hover:opacity-100 transition-all"
+                ></i>
+                <div class="month-dropdown">
+                  <a
+                    href="months/ziqadah/ziqadah-kids.html"
+                    class="text-emerald-700 hover:text-emerald-900"
+                    >Kids</a
+                  >
+                  <a
+                    href="months/ziqadah/ziqadah-elders.html"
+                    class="text-slate-700 hover:text-slate-900 mt-2"
+                    >Elders</a
+                  >
+                </div>
+              </div>
+              <div
+                class="month-card-item p-4 rounded-[1.5rem] cursor-pointer flex items-center justify-between group"
+              >
+                <div class="active-indicator"></div>
+                <div class="flex items-center gap-4">
+                  <div
+                    class="w-10 h-10 rounded-xl bg-slate-100 flex items-center justify-center group-hover:bg-emerald-100 transition-colors"
+                  >
+                    <i
+                      class="fas fa-kaaba text-slate-400 group-hover:text-emerald-600"
+                    ></i>
+                  </div>
+                  <span class="text-sm font-bold tracking-tight"
+                    >Dhul Hijjah</span
+                  >
+                </div>
+                <i
+                  class="fas fa-chevron-right text-[8px] opacity-0 group-hover:opacity-100 transition-all"
+                ></i>
+                <div class="month-dropdown">
+                  <a
+                    href="months/zulhaj/zulhaj-kids.html"
+                    class="text-emerald-700 hover:text-emerald-900"
+                    >Kids</a
+                  >
+                  <a
+                    href="months/zulhaj/zulhaj-elders.html"
+                    class="text-slate-700 hover:text-slate-900 mt-2"
+                    >Elders</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-6 pt-6 border-t border-slate-100">
+            <button
+              onclick="toggleProfileModal()"
+              class="w-full bg-slate-900 text-white p-4 rounded-[1.5rem] text-xs font-bold hover:bg-emerald-800 transition shadow-xl"
+            >
+              <i class="fas fa-user-edit mr-2"></i> EDIT PROFILE
+            </button>
+          </div>
+        </div>
+      </aside>
+
+      <main class="flex-1 overflow-y-auto h-screen p-6 lg:p-10 custom-scroll">
+        <header class="flex justify-between items-center mb-10">
+          <div class="flex flex-col">
+            <h2 class="text-3xl font-black tracking-tighter" id="welcomeText">
+              Welcome, Teacher
+            </h2>
+            <p class="text-slate-400 text-sm font-medium" id="statusText">
+              Manager Mode • 30k Students
+            </p>
+          </div>
+
+          <div class="flex items-center gap-4">
+            <button
+              id="favouritesBtn"
+              class="bg-white p-3 rounded-[2rem] shadow-sm border border-slate-100 hover:shadow-md transition-all"
+            >
+              <i class="fas fa-heart text-red-500 text-lg"></i>
+            </button>
+            <div
+              class="profile-panel flex items-center gap-4 bg-white p-2 rounded-[2rem] shadow-sm border border-slate-100"
+            >
+              <div class="px-4 py-2">
+                <p
+                  class="text-[10px] font-bold text-slate-400 uppercase leading-none"
+                >
+                  Current Profile
+                </p>
+                <p
+                  class="text-xs font-black text-emerald-600"
+                  id="navNameDisplay"
+                >
+                  Hafiz Ali Ahmed
+                </p>
+              </div>
+              <img
+                id="navAvatar"
+                src="https://ui-avatars.com/api/?name=Ali&background=065f46&color=fff"
+                class="w-12 h-12 rounded-[1.2rem] object-cover border-2 border-emerald-50"
+              />
+            </div>
+          </div>
+        </header>
+
+        <section
+          class="relative bg-[#064e3b] rounded-[3.5rem] p-12 text-white overflow-hidden mb-12 shadow-2xl shadow-emerald-900/20"
+        >
+          <div class="relative z-10">
+            <div
+              class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-4 py-2 rounded-full border border-white/20 mb-6"
+            >
+              <span
+                class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"
+              ></span>
+              <span
+                class="text-[25px] font-black uppercase tracking-widest arabic-text"
+                >صَلُّوْا عَلَی الْحَبیب! صَلَّی اللّٰہُ عَلٰی مُحَمَّد</span
+              >
+            </div>
+            <h3 class="text-5xl font-black leading-[1.1] mb-6">
+              Madani Guldastah <br /><span class="text-emerald-400"
+                >Weekly Videos.</span
+              >
+            </h3>
+            <p
+              class="text-emerald-100/60 max-w-md font-medium text-sm leading-relaxed"
+            >
+              Wednesday & Thursday: Share your screen for 5 minutes. Watch,
+              learn, and quiz your students instantly.
+            </p>
+          </div>
+          <div
+            class="absolute right-0 bottom-0 opacity-10 translate-x-1/4 translate-y-1/4"
+          >
+            <i class="fas fa-mosque text-[25rem]"></i>
+          </div>
+        </section>
+
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8"
+          id="videoGrid"
+        >
+          <div class="video-card-premium p-6">
+            <div
+              class="h-48 rounded-[2.5rem] bg-slate-50 relative overflow-hidden p-8 flex flex-col justify-end"
+            >
+              <button
+                class="absolute top-4 right-4 favourite-btn bg-white/80 backdrop-blur-sm rounded-full p-2 hover:bg-white transition-all"
+                data-month="Muharram"
+              >
+                <i class="fas fa-heart text-red-400 text-lg"></i>
+              </button>
+              <i
+                class="fas fa-star-and-crescent text-slate-200 text-[10rem] absolute -top-10 -right-10 rotate-12"
+              ></i>
+              <h4 class="text-2xl font-black text-slate-800 relative z-10">
+                Muharram
+              </h4>
+              <p
+                class="text-[10px] font-black text-emerald-600 relative z-10 tracking-[.2em] uppercase"
+              >
+                Weekly Videos
               </p>
+            </div>
+            <div class="mt-6 flex flex-col gap-3">
+              <a href="months/muharram/muharram-kids.html">
+                <button
+                  class="w-full bg-emerald-50 text-emerald-700 py-4 rounded-[1.5rem] text-[15px] font-black tracking-widest hover:bg-emerald-600 hover:text-white transition-all"
+                >
+                  Kids Videos
+                </button></a
+              >
+              <a href="months/muharram/muharram-elders.html">
+                <button
+                  class="w-full bg-amber-50 text-amber-700 py-4 rounded-[1.5rem] text-[15px] font-black tracking-widest hover:bg-amber-600 hover:text-white transition-all uppercase"
+                >
+                  Elders Videos
+                </button></a
+              >
+            </div>
+          </div>
+          <div class="video-card-premium p-6">
+            <div
+              class="h-48 rounded-[2.5rem] bg-slate-50 relative overflow-hidden p-8 flex flex-col justify-end"
+            >
+              <button
+                class="absolute top-4 right-4 favourite-btn bg-white/80 backdrop-blur-sm rounded-full p-2 hover:bg-white transition-all"
+                data-month="Safar"
+              >
+                <i class="fas fa-heart text-red-400 text-lg"></i>
+              </button>
+              <i
+                class="fas fa-leaf text-slate-200 text-[10rem] absolute -top-10 -right-10 rotate-12"
+              ></i>
+              <h4 class="text-2xl font-black text-slate-800 relative z-10">
+                Safar
+              </h4>
+              <p
+                class="text-[10px] font-black text-emerald-600 relative z-10 tracking-[.2em] uppercase"
+              >
+                Weekly Videos
+              </p>
+            </div>
+            <div class="mt-6 flex flex-col gap-3">
+              <a href="months/safar/safar-kids.html">
+                <button
+                  class="w-full bg-emerald-50 text-emerald-700 py-4 rounded-[1.5rem] text-[15px] font-black tracking-widest hover:bg-emerald-600 hover:text-white transition-all"
+                >
+                  Kids Videos
+                </button>
+              </a>
+              <a href="months/safar/safar-elders.html">
+                <button
+                  class="w-full bg-amber-50 text-amber-700 py-4 rounded-[1.5rem] text-[15px] font-black tracking-widest hover:bg-amber-600 hover:text-white transition-all uppercase"
+                >
+                  Elders Videos
+                </button>
+              </a>
+            </div>
+          </div>
+          <div class="video-card-premium p-6">
+            <div
+              class="h-48 rounded-[2.5rem] bg-slate-50 relative overflow-hidden p-8 flex flex-col justify-end"
+            >
+              <button
+                class="absolute top-4 right-4 favourite-btn bg-white/80 backdrop-blur-sm rounded-full p-2 hover:bg-white transition-all"
+                data-month="rabi-al-awwal"
+              >
+                <i class="fas fa-heart text-red-400 text-lg"></i>
+              </button>
+              <i
+                class="fas fa-dove text-slate-200 text-[10rem] absolute -top-10 -right-10 rotate-12"
+              ></i>
+              <h4 class="text-2xl font-black text-slate-800 relative z-10">
+                Rabi' al-Awwal
+              </h4>
+              <p
+                class="text-[10px] font-black text-emerald-600 relative z-10 tracking-[.2em] uppercase"
+              >
+                Weekly Videos
+              </p>
+            </div>
+            <div class="mt-6 flex flex-col gap-3">
+              <a href="months/rabiulawwal/rabiulawwal-kids.html">
+                <button
+                  class="w-full bg-emerald-50 text-emerald-700 py-4 rounded-[1.5rem] text-[15px] font-black tracking-widest hover:bg-emerald-600 hover:text-white transition-all"
+                >
+                  Kids Videos
+                </button>
+              </a>
+              <a href="months/rabiulawwal/rabiulawwal-elders.html">
+                <button
+                  class="w-full bg-amber-50 text-amber-700 py-4 rounded-[1.5rem] text-[15px] font-black tracking-widest hover:bg-amber-600 hover:text-white transition-all uppercase"
+                >
+                  Elders Videos
+                </button>
+              </a>
+            </div>
+          </div>
+          <div class="video-card-premium p-6">
+            <div
+              class="h-48 rounded-[2.5rem] bg-slate-50 relative overflow-hidden p-8 flex flex-col justify-end"
+            >
+              <button
+                class="absolute top-4 right-4 favourite-btn bg-white/80 backdrop-blur-sm rounded-full p-2 hover:bg-white transition-all"
+                data-month="rabi-al-thani"
+              >
+                <i class="fas fa-heart text-red-400 text-lg"></i>
+              </button>
+              <i
+                class="fas fa-book-open text-slate-200 text-[10rem] absolute -top-10 -right-10 rotate-12"
+              ></i>
+              <h4 class="text-2xl font-black text-slate-800 relative z-10">
+                Rabi' al-Thani
+              </h4>
+              <p
+                class="text-[10px] font-black text-emerald-600 relative z-10 tracking-[.2em] uppercase"
+              >
+                Weekly Videos
+              </p>
+            </div>
+            <div class="mt-6 flex flex-col gap-3">
+              <a href="months/rabiulsani/rabiulsani-kids.html">
+                <button
+                  class="w-full bg-emerald-50 text-emerald-700 py-4 rounded-[1.5rem] text-[15px] font-black tracking-widest hover:bg-emerald-600 hover:text-white transition-all"
+                >
+                  Kids Videos
+                </button>
+              </a>
+              <a href="months/rabiulsani/rabiulsani-elders.html">
+                <button
+                  class="w-full bg-amber-50 text-amber-700 py-4 rounded-[1.5rem] text-[15px] font-black tracking-widest hover:bg-amber-600 hover:text-white transition-all uppercase"
+                >
+                  Elders Videos
+                </button>
+              </a>
+            </div>
+          </div>
+          <div class="video-card-premium p-6">
+            <div
+              class="h-48 rounded-[2.5rem] bg-slate-50 relative overflow-hidden p-8 flex flex-col justify-end"
+            >
+              <button
+                class="absolute top-4 right-4 favourite-btn bg-white/80 backdrop-blur-sm rounded-full p-2 hover:bg-white transition-all"
+                data-month="jumada-al-ula"
+              >
+                <i class="fas fa-heart text-red-400 text-lg"></i>
+              </button>
+              <i
+                class="fas fa-hands-praying text-slate-200 text-[10rem] absolute -top-10 -right-10 rotate-12"
+              ></i>
+              <h4 class="text-2xl font-black text-slate-800 relative z-10">
+                Jumada al-Ula
+              </h4>
+              <p
+                class="text-[10px] font-black text-emerald-600 relative z-10 tracking-[.2em] uppercase"
+              >
+                Weekly Videos
+              </p>
+            </div>
+            <div class="mt-6 flex flex-col gap-3">
+              <a href="months/jamadiulula/jamadiulula-kids.html">
+                <button
+                  class="w-full bg-emerald-50 text-emerald-700 py-4 rounded-[1.5rem] text-[15px] font-black tracking-widest hover:bg-emerald-600 hover:text-white transition-all"
+                >
+                  Kids Videos
+                </button>
+              </a>
+              <a href="months/jamadiulula/jamadiulula-elders.html">
+                <button
+                  class="w-full bg-amber-50 text-amber-700 py-4 rounded-[1.5rem] text-[15px] font-black tracking-widest hover:bg-amber-600 hover:text-white transition-all uppercase"
+                >
+                  Elders Videos
+                </button>
+              </a>
+            </div>
+          </div>
+          <div class="video-card-premium p-6">
+            <div
+              class="h-48 rounded-[2.5rem] bg-slate-50 relative overflow-hidden p-8 flex flex-col justify-end"
+            >
+              <button
+                class="absolute top-4 right-4 favourite-btn bg-white/80 backdrop-blur-sm rounded-full p-2 hover:bg-white transition-all"
+                data-month="jumada-al-thaniya"
+              >
+                <i class="fas fa-heart text-red-400 text-lg"></i>
+              </button>
+              <i
+                class="fas fa-mosque text-slate-200 text-[10rem] absolute -top-10 -right-10 rotate-12"
+              ></i>
+              <h4 class="text-2xl font-black text-slate-800 relative z-10">
+                Jumada al-Thaniya
+              </h4>
+              <p
+                class="text-[10px] font-black text-emerald-600 relative z-10 tracking-[.2em] uppercase"
+              >
+                Weekly Videos
+              </p>
+            </div>
+            <div class="mt-6 flex flex-col gap-3">
+              <a href="months/jamadiulsani/jamadiulsani-kids.html">
+                <button
+                  class="w-full bg-emerald-50 text-emerald-700 py-4 rounded-[1.5rem] text-[15px] font-black tracking-widest hover:bg-emerald-600 hover:text-white transition-all"
+                >
+                  Kids Videos
+                </button>
+              </a>
+              <a href="months/jamadiulsani/jamadiulsani-elders.html">
+                <button
+                  class="w-full bg-amber-50 text-amber-700 py-4 rounded-[1.5rem] text-[15px] font-black tracking-widest hover:bg-amber-600 hover:text-white transition-all uppercase"
+                >
+                  Elders Videos
+                </button>
+              </a>
+            </div>
+          </div>
+          <div class="video-card-premium p-6">
+            <div
+              class="h-48 rounded-[2.5rem] bg-slate-50 relative overflow-hidden p-8 flex flex-col justify-end"
+            >
+              <button
+                class="absolute top-4 right-4 favourite-btn bg-white/80 backdrop-blur-sm rounded-full p-2 hover:bg-white transition-all"
+                data-month="rajab"
+              >
+                <i class="fas fa-heart text-red-400 text-lg"></i>
+              </button>
+              <i
+                class="fas fa-moon text-slate-200 text-[10rem] absolute -top-10 -right-10 rotate-12"
+              ></i>
+              <h4 class="text-2xl font-black text-slate-800 relative z-10">
+                Rajab
+              </h4>
+              <p
+                class="text-[10px] font-black text-emerald-600 relative z-10 tracking-[.2em] uppercase"
+              >
+                Weekly Videos
+              </p>
+            </div>
+            <div class="mt-6 flex flex-col gap-3">
+              <a href="months/rajab/rajab-kids.html">
+                <button
+                  class="w-full bg-emerald-50 text-emerald-700 py-4 rounded-[1.5rem] text-[15px] font-black tracking-widest hover:bg-emerald-600 hover:text-white transition-all"
+                >
+                  Kids Videos
+                </button>
+              </a>
+              <a href="months/rajab/rajab-elders.html">
+                <button
+                  class="w-full bg-amber-50 text-amber-700 py-4 rounded-[1.5rem] text-[15px] font-black tracking-widest hover:bg-amber-600 hover:text-white transition-all uppercase"
+                >
+                  Elders Videos
+                </button>
+              </a>
+            </div>
+          </div>
+          <div class="video-card-premium p-6">
+            <div
+              class="h-48 rounded-[2.5rem] bg-slate-50 relative overflow-hidden p-8 flex flex-col justify-end"
+            >
+              <button
+                class="absolute top-4 right-4 favourite-btn bg-white/80 backdrop-blur-sm rounded-full p-2 hover:bg-white transition-all"
+                data-month="shaban"
+              >
+                <i class="fas fa-heart text-red-400 text-lg"></i>
+              </button>
+              <i
+                class="fas fa-kaaba text-slate-200 text-[10rem] absolute -top-10 -right-10 rotate-12"
+              ></i>
+              <h4 class="text-2xl font-black text-slate-800 relative z-10">
+                Sha'ban
+              </h4>
+              <p
+                class="text-[10px] font-black text-emerald-600 relative z-10 tracking-[.2em] uppercase"
+              >
+                Weekly Videos
+              </p>
+            </div>
+            <div class="mt-6 flex flex-col gap-3">
+              <a href="months/shaban/shaban-kids.html">
+                <button
+                  class="w-full bg-emerald-50 text-emerald-700 py-4 rounded-[1.5rem] text-[15px] font-black tracking-widest hover:bg-emerald-600 hover:text-white transition-all"
+                >
+                  Kids Videos
+                </button>
+              </a>
+              <a href="months/shaban/shaban-elders.html">
+                <button
+                  class="w-full bg-amber-50 text-amber-700 py-4 rounded-[1.5rem] text-[15px] font-black tracking-widest hover:bg-amber-600 hover:text-white transition-all uppercase"
+                >
+                  Elders Videos
+                </button>
+              </a>
+            </div>
+          </div>
+          <div class="video-card-premium p-6">
+            <div
+              class="h-48 rounded-[2.5rem] bg-slate-50 relative overflow-hidden p-8 flex flex-col justify-end"
+            >
+              <button
+                class="absolute top-4 right-4 favourite-btn bg-white/80 backdrop-blur-sm rounded-full p-2 hover:bg-white transition-all"
+                data-month="ramadan"
+              >
+                <i class="fas fa-heart text-red-400 text-lg"></i>
+              </button>
+              <i
+                class="fas fa-quran text-slate-200 text-[10rem] absolute -top-10 -right-10 rotate-12"
+              ></i>
+              <h4 class="text-2xl font-black text-slate-800 relative z-10">
+                Ramadan
+              </h4>
+              <p
+                class="text-[10px] font-black text-emerald-600 relative z-10 tracking-[.2em] uppercase"
+              >
+                Weekly Videos
+              </p>
+            </div>
+            <div class="mt-6 flex flex-col gap-3">
+              <a href="months/ramzan/ramzan-kids.html">
+                <button
+                  class="w-full bg-emerald-50 text-emerald-700 py-4 rounded-[1.5rem] text-[15px] font-black tracking-widest hover:bg-emerald-600 hover:text-white transition-all"
+                >
+                  Kids Videos
+                </button></a
+              >
+              <a href="months/ramzan/ramzan-elders.html">
+                <button
+                  class="w-full bg-amber-50 text-amber-700 py-4 rounded-[1.5rem] text-[15px] font-black tracking-widest hover:bg-amber-600 hover:text-white transition-all uppercase"
+                >
+                  Elders Videos
+                </button>
+              </a>
+            </div>
+          </div>
+          <div class="video-card-premium p-6">
+            <div
+              class="h-48 rounded-[2.5rem] bg-slate-50 relative overflow-hidden p-8 flex flex-col justify-end"
+            >
+              <button
+                class="absolute top-4 right-4 favourite-btn bg-white/80 backdrop-blur-sm rounded-full p-2 hover:bg-white transition-all"
+                data-month="shawwal"
+              >
+                <i class="fas fa-heart text-red-400 text-lg"></i>
+              </button>
+              <i
+                class="fas fa-gift text-slate-200 text-[10rem] absolute -top-10 -right-10 rotate-12"
+              ></i>
+              <h4 class="text-2xl font-black text-slate-800 relative z-10">
+                Shawwal
+              </h4>
+              <p
+                class="text-[10px] font-black text-emerald-600 relative z-10 tracking-[.2em] uppercase"
+              >
+                Weekly Videos
+              </p>
+            </div>
+            <div class="mt-6 flex flex-col gap-3">
+              <a href="months/shawwal/shawwal-kids.html">
+                <button
+                  class="w-full bg-emerald-50 text-emerald-700 py-4 rounded-[1.5rem] text-[15px] font-black tracking-widest hover:bg-emerald-600 hover:text-white transition-all"
+                >
+                  Kids Videos
+                </button>
+              </a>
+              <a href="months/shawwal/shawwal-elders.html">
+                <button
+                  class="w-full bg-amber-50 text-amber-700 py-4 rounded-[1.5rem] text-[15px] font-black tracking-widest hover:bg-amber-600 hover:text-white transition-all uppercase"
+                >
+                  Elders Videos
+                </button></a
+              >
+            </div>
+          </div>
+          <div class="video-card-premium p-6">
+            <div
+              class="h-48 rounded-[2.5rem] bg-slate-50 relative overflow-hidden p-8 flex flex-col justify-end"
+            >
+              <button
+                class="absolute top-4 right-4 favourite-btn bg-white/80 backdrop-blur-sm rounded-full p-2 hover:bg-white transition-all"
+                data-month="dhul-qaadah"
+              >
+                <i class="fas fa-heart text-red-400 text-lg"></i>
+              </button>
+              <i
+                class="fas fa-tree text-slate-200 text-[10rem] absolute -top-10 -right-10 rotate-12"
+              ></i>
+              <h4 class="text-2xl font-black text-slate-800 relative z-10">
+                Dhul Qa'dah
+              </h4>
+              <p
+                class="text-[10px] font-black text-emerald-600 relative z-10 tracking-[.2em] uppercase"
+              >
+                Weekly Videos
+              </p>
+            </div>
+            <div class="mt-6 flex flex-col gap-3">
+              <a href="months/ziqadah/ziqadah-kids.html">
+                <button
+                  class="w-full bg-emerald-50 text-emerald-700 py-4 rounded-[1.5rem] text-[15px] font-black tracking-widest hover:bg-emerald-600 hover:text-white transition-all"
+                >
+                  Kids Videos
+                </button></a
+              >
+              <a href="months/ziqadah/ziqadah-elders.html">
+                <button
+                  class="w-full bg-amber-50 text-amber-700 py-4 rounded-[1.5rem] text-[15px] font-black tracking-widest hover:bg-amber-600 hover:text-white transition-all uppercase"
+                >
+                  Elders Videos
+                </button></a
+              >
+            </div>
+          </div>
+          <div class="video-card-premium p-6">
+            <div
+              class="h-48 rounded-[2.5rem] bg-slate-50 relative overflow-hidden p-8 flex flex-col justify-end"
+            >
+              <button
+                class="absolute top-4 right-4 favourite-btn bg-white/80 backdrop-blur-sm rounded-full p-2 hover:bg-white transition-all"
+                data-month="dhul-hijjah"
+              >
+                <i class="fas fa-heart text-red-400 text-lg"></i>
+              </button>
+              <i
+                class="fas fa-kaaba text-slate-200 text-[10rem] absolute -top-10 -right-10 rotate-12"
+              ></i>
+              <h4 class="text-2xl font-black text-slate-800 relative z-10">
+                Dhul Hijjah
+              </h4>
+              <p
+                class="text-[10px] font-black text-emerald-600 relative z-10 tracking-[.2em] uppercase"
+              >
+                Weekly Videos
+              </p>
+            </div>
+            <div class="mt-6 flex flex-col gap-3">
+              <a href="months/zulhaj/zulhaj-kids.html">
+                <button
+                  class="w-full bg-emerald-50 text-emerald-700 py-4 rounded-[1.5rem] text-[15px] font-black tracking-widest hover:bg-emerald-600 hover:text-white transition-all"
+                >
+                  Kids Videos
+                </button></a
+              >
+              <a href="months/zulhaj/zulhaj-elders.html">
+                <button
+                  class="w-full bg-amber-50 text-amber-700 py-4 rounded-[1.5rem] text-[15px] font-black tracking-widest hover:bg-amber-600 hover:text-white transition-all uppercase"
+                >
+                  Elders Videos
+                </button></a
+              >
             </div>
           </div>
         </div>
-      </div>
+      </main>
     </div>
-
-    <!-- LINKS POPUP (Urdu Videos Links For Kids) - FIXED VERSION -->
 
     <div
-      id="linksPopup"
-      class="links-popup modal-hide fixed inset-0 z-[200] flex items-center justify-center bg-slate-900/70 backdrop-blur-md p-4 transition-all duration-300"
+      id="profileModal"
+      class="modal-hide fixed inset-0 z-[100] flex items-center justify-center bg-emerald-950/40 backdrop-blur-xl p-6"
     >
       <div
-        class="bg-white w-full max-w-3xl max-h-[85vh] rounded-[2.5rem] shadow-[0_35px_60px_-15px_rgba(0,0,0,0.4)] overflow-hidden relative border border-white/20 flex flex-col"
+        class="bg-white w-full max-w-md rounded-[3rem] p-10 shadow-2xl relative overflow-hidden"
       >
-        <div
-          class="h-2.5 bg-gradient-to-r from-emerald-400 via-teal-500 to-indigo-500 w-full flex-shrink-0"
-        ></div>
+        <div class="absolute top-0 left-0 w-full h-2 bg-emerald-500"></div>
+        <h2 class="text-3xl font-black tracking-tighter mb-2">
+          Identify Yourself
+        </h2>
+        <p class="text-slate-400 text-sm mb-8 font-medium">
+          This will sync your profile across the dashboard.
+        </p>
 
-        <div class="p-6 md:p-10 overflow-hidden flex flex-col flex-1">
-          <div class="flex justify-between items-start mb-8">
-            <div>
-              <h2
-                class="text-xl md:text-2xl font-black text-slate-800 flex items-center gap-3 uppercase tracking-tight leading-tight"
+        <div class="space-y-5">
+          <div class="group">
+            <label
+              class="text-[10px] font-black text-slate-400 uppercase ml-4 mb-2 block"
+              >Full Name</label
+            >
+            <input
+              type="text"
+              id="inputName"
+              class="w-full bg-slate-50 border-2 border-slate-100 rounded-[1.5rem] p-4 outline-none focus:border-emerald-500 transition-all font-bold"
+              placeholder="Enter Name..."
+            />
+          </div>
+          <div class="flex gap-4">
+            <div class="flex-1">
+              <label
+                class="text-[10px] font-black text-slate-400 uppercase ml-4 mb-2 block"
+                >Age</label
               >
-                <span
-                  class="p-2.5 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center shadow-sm"
-                >
-                  <i class="fas fa-link"></i>
-                </span>
-                <span
-                  >Links &nbsp; Of &nbsp; Weekly &nbsp; Videos &nbsp; For &nbsp;
-                  Kids</span
-                >
-              </h2>
-              <p
-                class="text-slate-500 text-xs md:text-sm font-medium mt-3 flex items-center gap-2"
-              >
-                <i class="fas fa-paper-plane text-indigo-500"></i>
-                Copy and share video links directly with students
-              </p>
+              <input
+                type="number"
+                id="inputAge"
+                class="w-full bg-slate-50 border-2 border-slate-100 rounded-[1.5rem] p-4 outline-none focus:border-emerald-500 transition-all font-bold"
+              />
             </div>
-
-            <button
-              id="closeLinksPopupBtn"
-              class="w-10 h-10 rounded-xl bg-slate-100 hover:bg-red-500 text-slate-500 hover:text-white transition-all duration-300 flex items-center justify-center flex-shrink-0 border border-slate-200"
-            >
-              <i class="fas fa-times text-lg"></i>
-            </button>
-          </div>
-
-          <div
-            class="flex flex-wrap gap-2 mb-6 bg-slate-100 p-1.5 rounded-2xl border border-slate-200/50 flex-shrink-0"
-          >
-            <button
-              data-popup-week="1"
-              class="popup-week-tab active-popup-week flex-1 px-4 py-3 rounded-xl text-[10px] md:text-xs uppercase tracking-widest transition-all active:scale-95"
-            >
-              Week 1
-            </button>
-            <button
-              data-popup-week="2"
-              class="popup-week-tab flex-1 px-4 py-3 rounded-xl text-[10px] md:text-xs uppercase tracking-widest transition-all active:scale-95"
-            >
-              Week 2
-            </button>
-            <button
-              data-popup-week="3"
-              class="popup-week-tab flex-1 px-4 py-3 rounded-xl text-[10px] md:text-xs uppercase tracking-widest transition-all active:scale-95"
-            >
-              Week 3
-            </button>
-            <button
-              data-popup-week="4"
-              class="popup-week-tab flex-1 px-4 py-3 rounded-xl text-[10px] md:text-xs uppercase tracking-widest transition-all active:scale-95"
-            >
-              Week 4
-            </button>
-          </div>
-
-          <div
-            id="popupLinksContent"
-            class="flex-1 overflow-y-auto custom-scroll pr-2 space-y-4"
-          ></div>
-
-          <div
-            class="mt-6 pt-5 border-t border-slate-100 flex justify-center flex-shrink-0"
-          >
-            <div
-              class="inline-flex items-center gap-3 bg-emerald-50 px-5 py-2.5 rounded-full border border-emerald-100"
-            >
-              <i
-                class="fas fa-mouse-pointer text-emerald-600 text-[10px] animate-bounce"
-              ></i>
-              <span
-                class="text-[10px] text-emerald-800 font-black uppercase tracking-widest"
+            <div class="flex-1">
+              <label
+                class="text-[10px] font-black text-slate-400 uppercase ml-4 mb-2 block"
+                >Role</label
               >
-                Click the link icon to copy to clipboard
-              </span>
+              <select
+                id="inputStatus"
+                class="w-full bg-slate-50 border-2 border-slate-100 rounded-[1.5rem] p-4 outline-none focus:border-emerald-500 transition-all font-bold appearance-none"
+              >
+                <option value="Teacher">Teacher</option>
+                <option value="Manager">Manager</option>
+              </select>
             </div>
           </div>
+          <button
+            onclick="saveProfile()"
+            class="w-full bg-emerald-600 text-white py-5 rounded-[1.5rem] font-black tracking-widest mt-4 hover:bg-emerald-700 shadow-xl shadow-emerald-600/20 transition-all active:scale-95"
+          >
+            SAVE IDENTITY
+          </button>
+          <button
+            onclick="toggleProfileModal()"
+            class="w-full text-slate-400 text-xs font-bold uppercase tracking-widest mt-2"
+          >
+            Maybe Later
+          </button>
         </div>
       </div>
     </div>
 
-    <script>
-      // ======================== ENHANCED DATABASES ========================
-      const videoLibrary = {
-        urdu: {
-          1: [
-            {
-              thumbnailIcon: "fa-quran",
-              title: "رمضان المبارک کا استقبال",
-              description: "نیت اور روحانی تیاریاں، روزے کی فضیلت اور توبہ",
-              videoLink: "#",
-              thumbnailUrl:
-                "https://res.cloudinary.com/dxrrvcdxo/image/upload/v1772737818/urud-1_l5yxw0.png",
-              videoUrl:
-                "https://res.cloudinary.com/dxrrvcdxo/video/upload/v1772726969/1st_Kid_Urdu_mjyliu.mp4",
-              qa: [
-                {
-                  question: "روزے کی فضیلت کیا ہے؟",
-                  answer:
-                    "روزہ تقویٰ اور پرہیزگاری کا ذریعہ ہے، یہ جہنم سے بچاتا ہے اور جنت میں داخل کرتا ہے۔",
-                },
-                {
-                  question: "رمضان المبارک میں نیت کی اہمیت بتائیں؟",
-                  answer:
-                    "نیت کے بغیر روزہ صحیح نہیں ہوتا۔ ہر روزے کی رات کو نیت کرنا واجب ہے۔",
-                },
-                {
-                  question: "توبہ کا صحیح طریقہ کیا ہے؟",
-                  answer:
-                    "گناہ چھوڑنا، اس پر ندامت کرنا اور مستقبل میں نہ کرنے کا عزم کرنا۔",
-                },
-              ],
-            },
-            {
-              thumbnailIcon: "fa-hands-praying",
-              title: "قیام اللیل اور تراویح",
-              description: "تراویح کی اہمیت، سنتوں کے ساتھ قیام اللیل کا طریقہ",
-              videoLink: "#",
-              thumbnailUrl:
-                "https://res.cloudinary.com/dxrrvcdxo/image/upload/v1772737818/urud-1_l5yxw0.png",
-              videoUrl:
-                "https://res.cloudinary.com/dxrrvcdxo/video/upload/v1772726969/1st_Kid_Urdu_mjyliu.mp4",
-              qa: [
-                {
-                  question: "تراویح کی کتنی رکعات ہیں؟",
-                  answer: "بیس رکعات ہیں، جو ہر رات رمضان میں پڑھی جاتی ہیں۔",
-                },
-                {
-                  question: "قیام اللیل کا بہترین وقت کب ہے؟",
-                  answer: "رات کے آخری حصے میں، سحر سے پہلے۔",
-                },
-                {
-                  question: "نماز تراویح کی سنت کیا ہے؟",
-                  answer: "جماعت کے ساتھ پڑھنا اور قرآن مجید کا سننا۔",
-                },
-              ],
-            },
-            {
-              thumbnailIcon: "fa-book-open",
-              title: "تلاوت قرآن تدبر کے ساتھ",
-              description: "ہر روز قرآن کو سمجھ کر پڑھنے کے آسان اصول",
-              videoLink: "#",
-              thumbnailUrl:
-                "https://res.cloudinary.com/dxrrvcdxo/image/upload/v1772737818/urud-1_l5yxw0.png",
-              videoUrl:
-                "https://res.cloudinary.com/dxrrvcdxo/video/upload/v1772726969/1st_Kid_Urdu_mjyliu.mp4",
-              qa: [
-                {
-                  question: "تدبر کے ساتھ قرآن پڑھنے کا کیا فائدہ ہے؟",
-                  answer:
-                    "قرآن کو سمجھ کر پڑھنے سے دل پر اثر ہوتا ہے اور عمل کرنا آسان ہو جاتا ہے۔",
-                },
-                {
-                  question: "روزانہ کم از کم کتنے صفحات پڑھنے چاہئیں؟",
-                  answer: "کم از کم 5 سے 10 صفحات روزانہ پڑھنے چاہئیں۔",
-                },
-                {
-                  question: "قرآن سمجھنے کے لیے کونسی دعا پڑھی جائے؟",
-                  answer:
-                    "رَبِّ زِدْنِي عِلْمًا - اے میرے رب مجھے علم میں بڑھا۔",
-                },
-              ],
-            },
-          ],
-          2: [
-            {
-              thumbnailIcon: "fa-moon",
-              title: "جود و سخا: رمضان میں صدقہ",
-              description: "نبی کریم ﷺ کی سخاوت اور رمضان میں خیرات کے ثمرات",
-              videoLink: "#",
-              thumbnailUrl:
-                "https://res.cloudinary.com/dxrrvcdxo/image/upload/v1772737818/urud-1_l5yxw0.png",
-              videoUrl:
-                "https://res.cloudinary.com/dxrrvcdxo/video/upload/v1772726969/1st_Kid_Urdu_mjyliu.mp4",
-              qa: [
-                {
-                  question: "رمضان میں صدقہ کی کیا فضیلت ہے؟",
-                  answer: "رمضان میں صدقہ کرنے کا ثواب 70 گنا بڑھ جاتا ہے۔",
-                },
-                {
-                  question: "نبی کریم ﷺ رمضان میں کتنی سخاوت فرماتے تھے؟",
-                  answer: "آپ ﷺ رمضان میں ہوا سے بھی زیادہ سخاوت کرتے تھے۔",
-                },
-                {
-                  question: "خیرات کے کون سے بہترین کام ہیں؟",
-                  answer:
-                    "مسکینوں کو کھانا کھلانا، یتیموں کی کفالت، اور غریبوں کی مدد کرنا۔",
-                },
-              ],
-            },
-            {
-              thumbnailIcon: "fa-utensils",
-              title: "سحری و افطار کے آداب",
-              description: "سحری کی برکت اور افطار کی سنتیں، دعائیں",
-              videoLink: "#",
-              thumbnailUrl:
-                "https://res.cloudinary.com/dxrrvcdxo/image/upload/v1772737818/urud-1_l5yxw0.png",
-              videoUrl:
-                "https://res.cloudinary.com/dxrrvcdxo/video/upload/v1772726969/1st_Kid_Urdu_mjyliu.mp4",
-              qa: [
-                {
-                  question: "سحری کی کیا برکت ہے؟",
-                  answer: "سحری میں برکت ہوتی ہے، اسے چھوڑنا نہیں چاہیے۔",
-                },
-                {
-                  question: "افطار کرتے وقت کونسی دعا پڑھی جاتی ہے؟",
-                  answer: "اللهم لك صمت وعلى رزقك أفطرت",
-                },
-                {
-                  question: "افطار میں کھجور کھانے کی سنت کیوں ہے؟",
-                  answer: "کیونکہ نبی کریم ﷺ اسی طرح افطار فرماتے تھے۔",
-                },
-              ],
-            },
-            {
-              thumbnailIcon: "fa-heart",
-              title: "صبر و ضبط: نفس کی اصلاح",
-              description: "روزے کے دوران اخلاقی تربیت اور نفس کشی",
-              videoLink: "#",
-              thumbnailUrl:
-                "https://res.cloudinary.com/dxrrvcdxo/image/upload/v1772737818/urud-1_l5yxw0.png",
-              videoUrl:
-                "https://res.cloudinary.com/dxrrvcdxo/video/upload/v1772726969/1st_Kid_Urdu_mjyliu.mp4",
-              qa: [
-                {
-                  question: "روزہ نفس کی اصلاح کیسے کرتا ہے؟",
-                  answer:
-                    "روزہ خواہشات کو کنٹرول کرنا سکھاتا ہے اور تقویٰ پیدا کرتا ہے۔",
-                },
-                {
-                  question: "غیبت اور جھوٹ سے روزہ کیسے متاثر ہوتا ہے؟",
-                  answer: "غیبت اور جھوٹ روزے کے ثواب کو ختم کر دیتے ہیں۔",
-                },
-                {
-                  question: "صبر کی تین اہم مثالیں بتائیں؟",
-                  answer: "مصیبت پر صبر، اطاعت پر صبر، اور گناہ چھوڑنے پر صبر۔",
-                },
-              ],
-            },
-          ],
-          3: [
-            {
-              thumbnailIcon: "fa-star-and-crescent",
-              title: "لیلۃ القدر کی عظمت",
-              description: "شب قدر کی نشانیاں، عبادات اور فضیلت",
-              videoLink: "#",
-              thumbnailUrl:
-                "https://res.cloudinary.com/dxrrvcdxo/image/upload/v1772737818/urud-1_l5yxw0.png",
-              videoUrl:
-                "https://res.cloudinary.com/dxrrvcdxo/video/upload/v1772726969/1st_Kid_Urdu_mjyliu.mp4",
-              qa: [
-                {
-                  question: "لیلۃ القدر کونسی رات ہے؟",
-                  answer:
-                    "یہ رمضان کی طاق راتوں میں سے ایک رات ہے، جو ہزار مہینوں سے بہتر ہے۔",
-                },
-                {
-                  question: "شب قدر کی کیا نشانیاں ہیں؟",
-                  answer:
-                    "رات کو چاندنی ہوتی ہے، ہوا معتدل ہوتی ہے، اور صبح کو سورج بغیر شعاعوں کے نکلتا ہے۔",
-                },
-                {
-                  question: "اس رات کونسی دعا زیادہ پڑھی جائے؟",
-                  answer: "اللهم إنك عفو تحب العفو فاعف عني",
-                },
-              ],
-            },
-            {
-              thumbnailIcon: "fa-dove",
-              title: "اعتکاف: روحانی پناہ گاہ",
-              description: "اعتکاف کے احکام، مسنون اعمال اور تاثیر",
-              videoLink: "#",
-              thumbnailUrl:
-                "https://res.cloudinary.com/dxrrvcdxo/image/upload/v1772737818/urud-1_l5yxw0.png",
-              videoUrl:
-                "https://res.cloudinary.com/dxrrvcdxo/video/upload/v1772726969/1st_Kid_Urdu_mjyliu.mp4",
-              qa: [
-                {
-                  question: "اعتکاف کا مطلب کیا ہے؟",
-                  answer: "مسجد میں اللہ کی عبادت کے لیے گوشہ نشین ہونا۔",
-                },
-                {
-                  question: "اعتکاف میں کن کاموں سے پرہیز کرنا چاہیے؟",
-                  answer: "بیچنا، خریدنا، اور دنیاوی باتوں سے بچنا چاہیے۔",
-                },
-                {
-                  question: "اعتکاف کے کم از کم کتنے دن رکھے جاتے ہیں؟",
-                  answer: "کم از کم ایک دن، لیکن سنت آخری 10 دنوں کا ہے۔",
-                },
-              ],
-            },
-            {
-              thumbnailIcon: "fa-quran",
-              title: "دعاؤں کا مقام",
-              description: "رمضان میں قبولیت دعا کے اوقات اور دعائیں",
-              videoLink: "#",
-              thumbnailUrl:
-                "https://res.cloudinary.com/dxrrvcdxo/image/upload/v1772737818/urud-1_l5yxw0.png",
-              videoUrl:
-                "https://res.cloudinary.com/dxrrvcdxo/video/upload/v1772726969/1st_Kid_Urdu_mjyliu.mp4",
-              qa: [
-                {
-                  question: "دعا قبول ہونے کے کون سے اوقات ہیں؟",
-                  answer:
-                    "سحر کا وقت، افطار سے پہلے، جمعہ کا دن، اور سجدے کی حالت میں۔",
-                },
-                {
-                  question: "افطار سے پہلے کی دعا کیوں خاص ہے؟",
-                  answer: "کیونکہ روزہ دار کی دعا افطار کے وقت قبول ہوتی ہے۔",
-                },
-                {
-                  question: "رمضان میں کونسی دعا کثرت سے پڑھنی چاہیے؟",
-                  answer: "اللهم إنك عفو تحب العفو فاعف عني",
-                },
-              ],
-            },
-          ],
-          4: [
-            {
-              thumbnailIcon: "fa-gift",
-              title: "صدقہ فطر اور زکوة",
-              description: "رمضان کے آخری عشرے میں مالی عبادات کی اہمیت",
-              videoLink: "#",
-              thumbnailUrl:
-                "https://res.cloudinary.com/dxrrvcdxo/image/upload/v1772737818/urud-1_l5yxw0.png",
-              videoUrl:
-                "https://res.cloudinary.com/dxrrvcdxo/video/upload/v1772726969/1st_Kid_Urdu_mjyliu.mp4",
-              qa: [
-                {
-                  question: "صدقہ فطر کب ادا کرنا واجب ہے؟",
-                  answer: "عید کی نماز سے پہلے ادا کرنا واجب ہے۔",
-                },
-                {
-                  question: "زکوة کن لوگوں کو دی جاتی ہے؟",
-                  answer:
-                    "غریبوں، مسکینوں، اور قرآن میں بیان کردہ 8 مصارف میں۔",
-                },
-                {
-                  question: "رمضان میں زکوة دینے کی فضیلت کیا ہے؟",
-                  answer: "زکوة رمضان میں دینے سے ثواب میں اضافہ ہوتا ہے۔",
-                },
-              ],
-            },
-            {
-              thumbnailIcon: "fa-church",
-              title: "عید الفطر کی تیاریاں",
-              description: "عید کی سنتیں، شکر گزاری اور خوشیاں بانٹنا",
-              videoLink: "#",
-              thumbnailUrl:
-                "https://res.cloudinary.com/dxrrvcdxo/image/upload/v1772737818/urud-1_l5yxw0.png",
-              videoUrl:
-                "https://res.cloudinary.com/dxrrvcdxo/video/upload/v1772726969/1st_Kid_Urdu_mjyliu.mp4",
-              qa: [
-                {
-                  question: "عید الفطر کی سنتیں کیا ہیں؟",
-                  answer:
-                    "غسل کرنا، خوشبو لگانا، نیا کپڑا پہننا، اور مسجد جانا۔",
-                },
-                {
-                  question: "عید کی نماز سے پہلے کیا ادا کرنا ضروری ہے؟",
-                  answer: "صدقہ فطر ادا کرنا ضروری ہے۔",
-                },
-                {
-                  question: "عید کے دن خوشی کیسے منائی جائے؟",
-                  answer:
-                    "اللہ کا شکر ادا کرتے ہوئے، رشتہ داروں سے مل کر، اور غریبوں کو خوش کر کے۔",
-                },
-              ],
-            },
-            {
-              thumbnailIcon: "fa-leaf",
-              title: "رمضان کے بعد استقامت",
-              description: "ماہ رمضان کے اعمال کو جاری رکھنے کے نسخے",
-              videoLink: "#",
-              thumbnailUrl:
-                "https://res.cloudinary.com/dxrrvcdxo/image/upload/v1772737818/urud-1_l5yxw0.png",
-              videoUrl:
-                "https://res.cloudinary.com/dxrrvcdxo/video/upload/v1772726969/1st_Kid_Urdu_mjyliu.mp4",
-              qa: [
-                {
-                  question: "رمضان کے بعد روزے رکھنے کی کیا فضیلت ہے؟",
-                  answer:
-                    "شوال کے چھ روزے رکھنے سے پورے سال کے روزے کا ثواب ملتا ہے۔",
-                },
-                {
-                  question: "شوال کے چھ روزے کب رکھے جاتے ہیں؟",
-                  answer:
-                    "عید کے بعد پورے شوال میں کسی بھی دن رکھے جا سکتے ہیں۔",
-                },
-                {
-                  question: "رمضان کی عادتوں کو کیسے برقرار رکھا جائے؟",
-                  answer: "تلاوت، نوافل، اور دعاؤں کو جاری رکھتے ہوئے۔",
-                },
-              ],
-            },
-          ],
-        },
-        english: {
-          1: [
-            {
-              thumbnailIcon: "fa-quran",
-              title: "Welcoming Ramadan",
-              description:
-                "Intentions, spiritual preparation, virtues of fasting and repentance.",
-              videoLink: "#",
-              thumbnailUrl:
-                "https://res.cloudinary.com/dxrrvcdxo/image/upload/v1772737818/urud-1_l5yxw0.png",
-              videoUrl:
-                "https://res.cloudinary.com/dxrrvcdxo/video/upload/v1772726969/1st_Kid_Urdu_mjyliu.mp4",
-              qa: [
-                {
-                  question: "What is the virtue of fasting?",
-                  answer:
-                    "Fasting develops Taqwa (God-consciousness) and is a shield from Hellfire.",
-                },
-                {
-                  question: "Explain the importance of intention in Ramadan.",
-                  answer:
-                    "Intention is essential for every fast; without it the fast is invalid.",
-                },
-                {
-                  question: "What is the correct way of repentance?",
-                  answer:
-                    "Leave the sin, regret it, and resolve not to return to it.",
-                },
-              ],
-            },
-            {
-              thumbnailIcon: "fa-hands-praying",
-              title: "Night Prayers & Taraweeh",
-              description:
-                "Significance of Taraweeh, Qiyam al-Layl and its prophetic traditions.",
-              videoLink: "#",
-              thumbnailUrl:
-                "https://res.cloudinary.com/dxrrvcdxo/image/upload/v1772737818/urud-1_l5yxw0.png",
-              videoUrl:
-                "https://res.cloudinary.com/dxrrvcdxo/video/upload/v1772726969/1st_Kid_Urdu_mjyliu.mp4",
-              qa: [
-                {
-                  question: "How many rak'ahs are in Taraweeh?",
-                  answer: "20 rak'ahs are prayed every night during Ramadan.",
-                },
-                {
-                  question: "What is the best time for Qiyam al-Layl?",
-                  answer: "The last third of the night, just before Suhoor.",
-                },
-                {
-                  question: "What is the sunnah of Taraweeh prayer?",
-                  answer: "Praying in congregation and listening to the Quran.",
-                },
-              ],
-            },
-            {
-              thumbnailIcon: "fa-book-open",
-              title: "Tadabbur of the Qur'an",
-              description:
-                "Easy daily methods to understand and reflect upon the Qur'an.",
-              videoLink: "#",
-              thumbnailUrl:
-                "https://res.cloudinary.com/dxrrvcdxo/image/upload/v1772737818/urud-1_l5yxw0.png",
-              videoUrl:
-                "https://res.cloudinary.com/dxrrvcdxo/video/upload/v1772726969/1st_Kid_Urdu_mjyliu.mp4",
-              qa: [
-                {
-                  question:
-                    "What is the benefit of reading Qur'an with reflection?",
-                  answer:
-                    "It impacts the heart and makes it easier to act upon.",
-                },
-                {
-                  question: "How many pages should one read daily?",
-                  answer: "At least 5 to 10 pages daily.",
-                },
-                {
-                  question:
-                    "Which dua is recited for understanding the Qur'an?",
-                  answer:
-                    "Rabbi zidni ilma (My Lord, increase me in knowledge).",
-                },
-              ],
-            },
-          ],
-          2: [
-            {
-              thumbnailIcon: "fa-moon",
-              title: "Generosity in Ramadan",
-              description:
-                "The Prophet's ﷺ charity and blessings of giving during this month.",
-              videoLink: "#",
-              thumbnailUrl:
-                "https://res.cloudinary.com/dxrrvcdxo/image/upload/v1772737818/urud-1_l5yxw0.png",
-              videoUrl:
-                "https://res.cloudinary.com/dxrrvcdxo/video/upload/v1772726969/1st_Kid_Urdu_mjyliu.mp4",
-              qa: [
-                {
-                  question: "What is the virtue of charity in Ramadan?",
-                  answer:
-                    "Reward for charity is multiplied 70 times in Ramadan.",
-                },
-                {
-                  question: "How generous was Prophet Muhammad ﷺ in Ramadan?",
-                  answer: "He was more generous than the wind in Ramadan.",
-                },
-                {
-                  question: "What are the best acts of charity?",
-                  answer:
-                    "Feeding the poor, caring for orphans, and helping the needy.",
-                },
-              ],
-            },
-            {
-              thumbnailIcon: "fa-utensils",
-              title: "Suhoor & Iftar Etiquette",
-              description:
-                "Blessings of pre-dawn meal and sunnah practices of breaking fast.",
-              videoLink: "#",
-              thumbnailUrl:
-                "https://res.cloudinary.com/dxrrvcdxo/image/upload/v1772737818/urud-1_l5yxw0.png",
-              videoUrl:
-                "https://res.cloudinary.com/dxrrvcdxo/video/upload/v1772726969/1st_Kid_Urdu_mjyliu.mp4",
-              qa: [
-                {
-                  question: "What is the blessing of Suhoor?",
-                  answer:
-                    "Suhoor contains blessings; it should not be skipped.",
-                },
-                {
-                  question: "Which dua is recited when breaking the fast?",
-                  answer: "Allahumma laka sumtu wa ala rizqika aftartu.",
-                },
-                {
-                  question: "Why is it sunnah to break fast with dates?",
-                  answer:
-                    "Because the Prophet ﷺ used to break his fast with dates.",
-                },
-              ],
-            },
-            {
-              thumbnailIcon: "fa-heart",
-              title: "Patience & Self-Discipline",
-              description:
-                "Moral training, controlling anger and character building.",
-              videoLink: "#",
-              thumbnailUrl:
-                "https://res.cloudinary.com/dxrrvcdxo/image/upload/v1772737818/urud-1_l5yxw0.png",
-              videoUrl:
-                "https://res.cloudinary.com/dxrrvcdxo/video/upload/v1772726969/1st_Kid_Urdu_mjyliu.mp4",
-              qa: [
-                {
-                  question: "How does fasting purify the soul?",
-                  answer:
-                    "Fasting teaches control over desires and develops Taqwa.",
-                },
-                {
-                  question: "How does backbiting affect fasting?",
-                  answer: "Backbiting and lying destroy the reward of fasting.",
-                },
-                {
-                  question: "Give three examples of patience.",
-                  answer:
-                    "Patience during hardship, patience in obedience, and patience in avoiding sin.",
-                },
-              ],
-            },
-          ],
-          3: [
-            {
-              thumbnailIcon: "fa-star-and-crescent",
-              title: "The Night of Decree",
-              description:
-                "Signs of Laylatul Qadr, powerful supplications and worship.",
-              videoLink: "#",
-              thumbnailUrl:
-                "https://res.cloudinary.com/dxrrvcdxo/image/upload/v1772737818/urud-1_l5yxw0.png",
-              videoUrl:
-                "https://res.cloudinary.com/dxrrvcdxo/video/upload/v1772726969/1st_Kid_Urdu_mjyliu.mp4",
-              qa: [
-                {
-                  question: "Which night is Laylatul Qadr?",
-                  answer:
-                    "One of the odd nights in the last 10 days of Ramadan, better than 1000 months.",
-                },
-                {
-                  question: "What are the signs of this night?",
-                  answer:
-                    "The night is bright, the wind is calm, and the sun rises without rays.",
-                },
-                {
-                  question: "Which dua should be recited abundantly?",
-                  answer: "Allahumma innaka afuwwun tuhibbul afwa fa'fu anni.",
-                },
-              ],
-            },
-            {
-              thumbnailIcon: "fa-dove",
-              title: "I'tikaf: Spiritual Retreat",
-              description:
-                "Rules and profound impact of seclusion in the mosque.",
-              videoLink: "#",
-              thumbnailUrl:
-                "https://res.cloudinary.com/dxrrvcdxo/image/upload/v1772737818/urud-1_l5yxw0.png",
-              videoUrl:
-                "https://res.cloudinary.com/dxrrvcdxo/video/upload/v1772726969/1st_Kid_Urdu_mjyliu.mp4",
-              qa: [
-                {
-                  question: "What is the meaning of I'tikaf?",
-                  answer:
-                    "Secluding oneself in the mosque for worship of Allah.",
-                },
-                {
-                  question: "What activities should be avoided during I'tikaf?",
-                  answer: "Buying, selling, and engaging in worldly talk.",
-                },
-                {
-                  question: "What is the minimum duration of I'tikaf?",
-                  answer:
-                    "Minimum one day, but the Sunnah is the last 10 days.",
-                },
-              ],
-            },
-            {
-              thumbnailIcon: "fa-quran",
-              title: "Power of Dua",
-              description: "Times of acceptance and heartfelt duas in Ramadan.",
-              videoLink: "#",
-              thumbnailUrl:
-                "https://res.cloudinary.com/dxrrvcdxo/image/upload/v1772737818/urud-1_l5yxw0.png",
-              videoUrl:
-                "https://res.cloudinary.com/dxrrvcdxo/video/upload/v1772726969/1st_Kid_Urdu_mjyliu.mp4",
-              qa: [
-                {
-                  question: "What are the best times for accepted dua?",
-                  answer:
-                    "Suhoor time, before Iftar, on Friday, and during prostration.",
-                },
-                {
-                  question: "Why is the dua before iftar special?",
-                  answer:
-                    "Because the fasting person's dua is accepted at Iftar time.",
-                },
-                {
-                  question:
-                    "Which dua should be recited frequently in Ramadan?",
-                  answer: "Allahumma innaka afuwwun tuhibbul afwa fa'fu anni.",
-                },
-              ],
-            },
-          ],
-          4: [
-            {
-              thumbnailIcon: "fa-gift",
-              title: "Zakat & Sadaqatul Fitr",
-              description: "Financial worship and purification of wealth.",
-              videoLink: "#",
-              thumbnailUrl:
-                "https://res.cloudinary.com/dxrrvcdxo/image/upload/v1772737818/urud-1_l5yxw0.png",
-              videoUrl:
-                "https://res.cloudinary.com/dxrrvcdxo/video/upload/v1772726969/1st_Kid_Urdu_mjyliu.mp4",
-              qa: [
-                {
-                  question: "When is Sadaqatul Fitr obligatory?",
-                  answer: "It must be paid before the Eid prayer.",
-                },
-                {
-                  question: "Who deserves Zakat?",
-                  answer:
-                    "The poor, needy, and the 8 categories mentioned in the Quran.",
-                },
-                {
-                  question: "What is the virtue of giving Zakat in Ramadan?",
-                  answer:
-                    "Giving Zakat in Ramadan increases reward significantly.",
-                },
-              ],
-            },
-            {
-              thumbnailIcon: "fa-church",
-              title: "Eid al-Fitr Preparations",
-              description: "Sunnahs of Eid, gratitude and sharing joy.",
-              videoLink: "#",
-              thumbnailUrl:
-                "https://res.cloudinary.com/dxrrvcdxo/image/upload/v1772737818/urud-1_l5yxw0.png",
-              videoUrl:
-                "https://res.cloudinary.com/dxrrvcdxo/video/upload/v1772726969/1st_Kid_Urdu_mjyliu.mp4",
-              qa: [
-                {
-                  question: "What are the Sunnahs of Eid al-Fitr?",
-                  answer:
-                    "Take a bath, wear perfume, wear new clothes, and go to the mosque.",
-                },
-                {
-                  question: "What must be paid before Eid prayer?",
-                  answer: "Sadaqatul Fitr must be paid.",
-                },
-                {
-                  question: "How should we celebrate Eid with joy?",
-                  answer:
-                    "By thanking Allah, visiting relatives, and making the poor happy.",
-                },
-              ],
-            },
-            {
-              thumbnailIcon: "fa-leaf",
-              title: "Steadfastness After Ramadan",
-              description: "How to maintain spiritual momentum post-Ramadan.",
-              videoLink: "#",
-              thumbnailUrl:
-                "https://res.cloudinary.com/dxrrvcdxo/image/upload/v1772737818/urud-1_l5yxw0.png",
-              videoUrl:
-                "https://res.cloudinary.com/dxrrvcdxo/video/upload/v1772726969/1st_Kid_Urdu_mjyliu.mp4",
-              qa: [
-                {
-                  question: "What is the virtue of fasting after Ramadan?",
-                  answer:
-                    "Fasting six days of Shawwal gives reward of fasting the whole year.",
-                },
-                {
-                  question: "When are the six days of Shawwal?",
-                  answer: "Any days during the month of Shawwal after Eid.",
-                },
-                {
-                  question: "How to maintain Ramadan habits?",
-                  answer:
-                    "Continue recitation, nawafil, and duas throughout the year.",
-                },
-              ],
-            },
-          ],
-        },
-      };
-      // Urdu Kids Links Database
-      const urduKidsLinks = {
-        1: [
-          {
-            videoNo: "01",
-            title: "Ramadan Ka Istqbaal (Welcome to Dear Ramadan)",
-            actualLink:
-              "https://academy.faizan.tv/ramadan/week1/intro-urdu-kids",
-          },
-          {
-            videoNo: "02",
-            title: "Roze Ki Fazeelat aur Niyat",
-            actualLink:
-              "https://academy.faizan.tv/ramadan/week1/fasting-benefits",
-          },
-          {
-            videoNo: "03",
-            title: "Chhoton Ke Liye Ramadan Guide",
-            actualLink: "https://academy.faizan.tv/ramadan/week1/kids-guide",
-          },
-        ],
-        2: [
-          {
-            videoNo: "04",
-            title: "Sakhawat aur Sadqa (Generosity)",
-            actualLink: "https://academy.faizan.tv/ramadan/week2/charity-kids",
-          },
-          {
-            videoNo: "05",
-            title: "Sahri aur Iftar Kay Adaab",
-            actualLink: "https://academy.faizan.tv/ramadan/week2/suhoor-iftar",
-          },
-          {
-            videoNo: "06",
-            title: "Bachon Ke Liye Duaen",
-            actualLink: "https://academy.faizan.tv/ramadan/week2/duas-kids",
-          },
-        ],
-        3: [
-          {
-            videoNo: "07",
-            title: "Shab-e-Qadar Ki Ahmiyat",
-            actualLink: "https://academy.faizan.tv/ramadan/week3/laylatul-qadr",
-          },
-          {
-            videoNo: "08",
-            title: "Itikaf Ki Fazilat",
-            actualLink: "https://academy.faizan.tv/ramadan/week3/itikaf",
-          },
-          {
-            videoNo: "09",
-            title: "Quran Majeed Sunehra Sabaq",
-            actualLink: "https://academy.faizan.tv/ramadan/week3/quran-lesson",
-          },
-        ],
-        4: [
-          {
-            videoNo: "10",
-            title: "Zakat aur Fitra",
-            actualLink: "https://academy.faizan.tv/ramadan/week4/zakat",
-          },
-          {
-            videoNo: "11",
-            title: "Eid Ki Tayyariyan",
-            actualLink:
-              "https://academy.faizan.tv/ramadan/week4/eid-preparation",
-          },
-          {
-            videoNo: "12",
-            title: "Ramadan Kay Baad Istiqamat",
-            actualLink: "https://academy.faizan.tv/ramadan/week4/steadfastness",
-          },
-        ],
-      };
+    <div
+      id="favouritesModal"
+      class="modal-hide fixed inset-0 z-[100] flex items-center justify-center bg-emerald-950/40 backdrop-blur-xl p-6"
+    >
+      <div
+        class="bg-white w-full max-w-md rounded-[3rem] p-10 shadow-2xl relative overflow-hidden"
+      >
+        <div class="absolute top-0 left-0 w-full h-2 bg-red-500"></div>
+        <h2 class="text-3xl font-black tracking-tighter mb-2">
+          Favourite Videos
+        </h2>
+        <p class="text-slate-400 text-sm mb-8 font-medium">
+          Your saved favourite Islamic month videos.
+        </p>
 
-      // --- Global State ---
-      let currentLanguage = "urdu";
-      let currentWeek = "1";
-      let currentVideoData = null;
-
-      // Render Video Grid
-      function renderVideoGrid() {
-        const grid = document.getElementById("videoGrid");
-        const weekData = videoLibrary[currentLanguage]?.[currentWeek];
-        if (!weekData) {
-          grid.innerHTML = `<div class="col-span-full text-center py-20">No videos</div>`;
-          return;
-        }
-        grid.innerHTML = "";
-        weekData.forEach((video, idx) => {
-          const gradient =
-            idx === 0
-              ? "from-emerald-50 to-teal-50"
-              : idx === 1
-                ? "from-amber-50 to-orange-50"
-                : "from-sky-50 to-blue-50";
-          const videoId = `video-ramzan-${currentWeek}-${idx}`;
-          grid.innerHTML += `
-                <div class="video-card-premium group" data-video-index="${idx}">
-                    <div class="relative overflow-hidden rounded-[2rem] m-4 bg-gradient-to-br ${gradient} h-52 flex items-center justify-center thumbnail-glow transition-all">
-                        <img src="${video.thumbnailUrl}" class="absolute inset-0 w-full h-full object-cover rounded-[2rem]" onerror="this.style.display='none'">
-                        <button class="absolute top-4 right-4 favourite-btn bg-white/80 backdrop-blur-sm rounded-full p-2 hover:bg-white transition-all shadow-sm z-20" 
-                                onclick="event.stopPropagation(); handleVideoFav('${videoId}', '${video.title.replace(/'/g, "\\'")}', '${video.thumbnailUrl}')" 
-                                data-video-id="${videoId}">
-                            <i class="fas fa-heart text-red-400 text-lg"></i>
-                        </button>
-                        <i class="fas ${video.thumbnailIcon} text-7xl text-emerald-700/30 group-hover:text-emerald-600/50 transition-all duration-500 absolute opacity-40 group-hover:scale-110"></i>
-                        <div class="z-10 flex flex-col items-center">
-                            <div class="w-16 h-16 bg-white/80 backdrop-blur rounded-2xl flex items-center justify-center shadow-xl mb-3 cursor-pointer" onclick="openVideoDetails(${idx})">
-                                <i class="fas fa-play text-emerald-700 text-2xl ml-1"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-5 pt-2">
-                        <h4 class="text-xl font-black tracking-tight text-slate-800 rtl-text">${video.title}</h4>
-                        <p class="text-slate-500 text-sm font-medium mt-2 rtl-text">${video.description}</p>
-                        <div class="mt-5 flex items-center justify-between">
-                            <button onclick="openVideoDetails(${idx})" class="text-sm font-black text-white hover:text-white transition flex items-center gap-1 bg-gradient-to-r from-emerald-500 to-teal-500 px-4 py-2 rounded-full shadow-md hover:shadow-lg transform hover:scale-105">
-                                Play Video <i class="fas fa-arrow-right text-xs"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            `;
-        });
-
-        // Update favorite icons based on global state
-        if (window.updateFavouriteButtons) window.updateFavouriteButtons();
-      }
-
-      function handleVideoFav(id, title, image) {
-        if (window.toggleFavourite) {
-          window.toggleFavourite({
-            id: id,
-            title: title,
-            image: image,
-            link: window.location.href, // Back to this page
-          });
-        }
-      }
-
-      // Open Netflix-style Popup
-      window.openVideoDetails = (index) => {
-        const weekData = videoLibrary[currentLanguage]?.[currentWeek];
-        if (!weekData || !weekData[index]) return;
-        currentVideoData = weekData[index];
-        const videoPlayer = document.getElementById("popupVideoPlayer");
-        const videoTitleSpan = document.getElementById("popupVideoTitle");
-        const questionsContainer = document.getElementById(
-          "questionsListContainer",
-        );
-
-        videoPlayer.src = currentVideoData.videoUrl;
-        videoTitleSpan.innerText = currentVideoData.title;
-
-        // Display Questions AND Answers in UI
-        if (currentVideoData.qa && currentVideoData.qa.length) {
-          questionsContainer.innerHTML = currentVideoData.qa
-            .map(
-              (item, i) => `
-            <div class="q-item p-6 mb-4 bg-white border border-slate-100 rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-300 rtl-text">
-    <div class="flex gap-5">
-        <div class="w-10 h-10 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center text-lg font-bold flex-shrink-0 border border-indigo-100">
-            ${i + 1}
+        <div id="favouritesList" class="space-y-4 max-h-96 overflow-y-auto">
+          <!-- Favourites will be added here -->
         </div>
-        
-        <div class="flex-1">
-            <p class="text-slate-800 font-extrabold text-lg md:text-xl leading-snug mb-3">
-                ${item.question}
-            </p>
-            
-            <div class="bg-emerald-50 rounded-lg p-4 border-r-4 border-emerald-500">
-                <p class="text-emerald-900 font-semibold text-base flex items-center gap-2">
-                    <span class="text-xl">📖</span> 
-                    <span class="uppercase tracking-wider text-xs font-black text-emerald-600 opacity-80">Answer:</span>
-                </p>
-                <p class="text-emerald-800 text-lg mt-1 leading-relaxed">
-                    ${item.answer}
-                </p>
-            </div>
-        </div>
+
+        <button
+          onclick="toggleFavouritesModal()"
+          class="w-full text-slate-400 text-xs font-bold uppercase tracking-widest mt-4"
+        >
+          Close
+        </button>
+      </div>
     </div>
-</div>
-        `,
-            )
-            .join("");
-        } else {
-          questionsContainer.innerHTML =
-            '<p class="text-gray-400">No questions available for this video.</p>';
-        }
-
-        document
-          .getElementById("videoDetailsPopup")
-          .classList.remove("modal-hide");
-        videoPlayer.play();
-      };
-
-      // Copy Questions Only (No Answers)
-      document
-        .getElementById("copyQuestionsOnlyBtn")
-        ?.addEventListener("click", () => {
-          if (
-            currentVideoData &&
-            currentVideoData.qa &&
-            currentVideoData.qa.length
-          ) {
-            // Extract ONLY questions, no answers
-            const questionsOnly = currentVideoData.qa
-              .map((item, i) => `${i + 1}. ${item.question}`)
-              .join("\n\n");
-            navigator.clipboard
-              .writeText(questionsOnly)
-              .then(() => {
-                alert(
-                  "✅ Only Questions copied! Send to students via Teams.\n\nStudents must watch the video to find answers.",
-                );
-              })
-              .catch(() => {
-                alert("Failed to copy. Please try again.");
-              });
-          } else {
-            alert("No questions available for this video.");
-          }
-        });
-
-      // Close video popup
-      function closeVideoPopup() {
-        document
-          .getElementById("videoDetailsPopup")
-          .classList.add("modal-hide");
-        const videoPlayer = document.getElementById("popupVideoPlayer");
-        if (videoPlayer) videoPlayer.pause();
-      }
-      document
-        .getElementById("closePopupBtnInside")
-        ?.addEventListener("click", closeVideoPopup);
-      document
-        .getElementById("videoDetailsPopup")
-        ?.addEventListener("click", (e) => {
-          if (e.target === document.getElementById("videoDetailsPopup"))
-            closeVideoPopup();
-        });
-
-      // Language & Week Toggle Logic
-      function setupTabs() {
-        document.getElementById("urduTabBtn").addEventListener("click", () => {
-          currentLanguage = "urdu";
-          updateActiveLanguageTab("urdu");
-          renderVideoGrid();
-        });
-        document
-          .getElementById("englishTabBtn")
-          .addEventListener("click", () => {
-            currentLanguage = "english";
-            updateActiveLanguageTab("english");
-            renderVideoGrid();
-          });
-        document.querySelectorAll(".week-tab").forEach((btn) => {
-          btn.addEventListener("click", () => {
-            currentWeek = btn.getAttribute("data-week");
-            updateActiveWeekTab(currentWeek);
-            renderVideoGrid();
-          });
-        });
-      }
-      function updateActiveLanguageTab(lang) {
-        const u = document.getElementById("urduTabBtn"),
-          e = document.getElementById("englishTabBtn");
-        if (lang === "urdu") {
-          u.classList.add("active-tab");
-          e.classList.remove("active-tab");
-        } else {
-          e.classList.add("active-tab");
-          u.classList.remove("active-tab");
-        }
-        const rtlContainers = [
-          document.getElementById("videoGrid"),
-          document.getElementById("questionsListContainer"),
-        ];
-        rtlContainers.forEach((el) => {
-          if (el) el.classList.toggle("urdu-rtl", lang === "urdu");
-        });
-      }
-      function updateActiveWeekTab(week) {
-        document.querySelectorAll(".week-tab").forEach((btn) => {
-          if (btn.getAttribute("data-week") === week) {
-            btn.classList.add("active-week", "bg-emerald-600", "text-white");
-            btn.classList.remove("bg-white", "text-slate-700");
-          } else {
-            btn.classList.remove("active-week", "bg-emerald-600", "text-white");
-            btn.classList.add("bg-white", "text-slate-700");
-          }
-        });
-      }
-
-      // LINKS POPUP - FIXED VERSION (Properly working close button)
-      function initLinksPopup() {
-        const popup = document.getElementById("linksPopup");
-        const openBtn = document.getElementById("openLinksPopupBtn");
-        const closeBtn = document.getElementById("closeLinksPopupBtn");
-
-        // Open popup
-        openBtn.onclick = () => {
-          popup.classList.remove("modal-hide");
-          renderPopupLinksContent("1");
-          // Set active week tab in popup
-          document.querySelectorAll(".popup-week-tab").forEach((btn) => {
-            if (btn.getAttribute("data-popup-week") === "1") {
-              btn.classList.add(
-                "active-popup-week",
-                "bg-emerald-600",
-                "text-white",
-              );
-              btn.classList.remove("bg-slate-100", "text-slate-700");
-            } else {
-              btn.classList.remove(
-                "active-popup-week",
-                "bg-emerald-600",
-                "text-white",
-              );
-              btn.classList.add("bg-slate-100", "text-slate-700");
-            }
-          });
-        };
-
-        // Close popup
-        closeBtn.onclick = () => {
-          popup.classList.add("modal-hide");
-        };
-
-        // Close on background click
-        popup.addEventListener("click", (e) => {
-          if (e.target === popup) popup.classList.add("modal-hide");
-        });
-
-        // Week tabs inside popup
-        document.querySelectorAll(".popup-week-tab").forEach((btn) => {
-          btn.addEventListener("click", () => {
-            const week = btn.getAttribute("data-popup-week");
-            document.querySelectorAll(".popup-week-tab").forEach((b) => {
-              b.classList.remove(
-                "active-popup-week",
-                "bg-emerald-600",
-                "text-white",
-              );
-              b.classList.add("bg-slate-100", "text-slate-700");
-            });
-            btn.classList.remove("bg-slate-100", "text-slate-700");
-            btn.classList.add(
-              "active-popup-week",
-              "bg-emerald-600",
-              "text-white",
-            );
-            renderPopupLinksContent(week);
-          });
-        });
-      }
-
-      function renderPopupLinksContent(week) {
-        const container = document.getElementById("popupLinksContent");
-        const data = urduKidsLinks[week];
-        if (!data) {
-          container.innerHTML =
-            '<div class="text-center py-8">No links available</div>';
-          return;
-        }
-        container.innerHTML = data
-          .map(
-            (item) => `
-            <div class="link-item-card bg-slate-50 rounded-2xl p-4 flex justify-between items-center gap-4">
-                <div class="flex-1">
-                    <span class="text-[10px] font-black bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded-full">Video ${item.videoNo}</span>
-                    <h4 class="font-black text-slate-800 mt-1">${item.title}</h4>
-                    <p class="text-slate-500 text-xs truncate mt-1">${item.actualLink}</p>
-                </div>
-                <button onclick="copyLinkToClipboard('${item.actualLink}')" class="copy-link-btn bg-white hover:bg-emerald-500 hover:text-white text-emerald-700 p-3 rounded-xl shadow-md transition-all">
-                    <i class="fas fa-copy"></i>
-                </button>
-            </div>
-        `,
-          )
-          .join("");
-      }
-
-      window.copyLinkToClipboard = (link) => {
-        navigator.clipboard.writeText(link);
-        alert("✅ Link copied to clipboard!");
-      };
-
-      // Initialize everything when layout is ready
-      function initPage() {
-        renderVideoGrid();
-        if (window.updateFavouriteButtons) window.updateFavouriteButtons();
-        setupTabs();
-        initLinksPopup();
-        updateActiveLanguageTab("urdu");
-        updateActiveWeekTab("1");
-      }
-
-      // Wait for layout injection
-      window.addEventListener("layoutReady", initPage);
-
-      // Fallback for direct loads
-      if (
-        document.body.classList.contains("layout-injected") ||
-        document.getElementById("layout-wrapper")
-      ) {
-        initPage();
-      }
-    </script>
-    <script src="../../assets/function/layout.js"></script>
-    <script src="../../assets/function/app.js"></script>
+    <script src="assets/function/app.js"></script>
   </body>
 </html>
