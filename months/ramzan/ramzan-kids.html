@@ -207,6 +207,45 @@
         transform: scale(1.03);
       }
     </style>
+    <style>
+      /* Base Tab Styling */
+      .popup-week-tab {
+        background-color: transparent;
+        color: #64748b; /* slate-500 */
+        transition: all 0.3s ease;
+      }
+
+      /* ACTIVE STATE - This is what fixes your background color issue */
+      .popup-week-tab.active-popup-week {
+        background-color: #10b981 !important; /* emerald-600 */
+        color: #ffffff !important;
+        font-weight: 900 !important;
+        box-shadow: 0 10px 15px -3px rgba(16, 185, 129, 0.3);
+        transform: translateY(-1px);
+      }
+
+      /* Hover state for inactive tabs */
+      .popup-week-tab:hover:not(.active-popup-week) {
+        background-color: #f1f5f9; /* slate-100 */
+        color: #1e293b; /* slate-800 */
+      }
+
+      /* Custom Scrollbar for the links list */
+      .custom-scroll::-webkit-scrollbar {
+        width: 6px;
+      }
+      .custom-scroll::-webkit-scrollbar-track {
+        background: #f1f5f9;
+        border-radius: 10px;
+      }
+      .custom-scroll::-webkit-scrollbar-thumb {
+        background: #cbd5e1;
+        border-radius: 10px;
+      }
+      .custom-scroll::-webkit-scrollbar-thumb:hover {
+        background: #10b981;
+      }
+    </style>
   </head>
 
   <body class="text-slate-800">
@@ -214,38 +253,76 @@
     <section class="max-w-7xl mx-auto py-4 custom-scroll">
       <!-- HERO SECTION -->
       <section
-        class="relative bg-gradient-to-br from-[#064e3b] to-[#022c22] rounded-[3.5rem] p-8 md:p-12 text-white overflow-hidden mb-12 shadow-2xl shadow-emerald-900/30"
+        class="relative min-h-[300px] md:min-h-[380px] flex flex-col items-center justify-center bg-[#021812] rounded-[3.5rem] p-8 md:p-12 text-white overflow-hidden mb-12 shadow-[0_35px_100px_-20px_rgba(6,78,59,0.5)] border border-emerald-500/10 text-center"
       >
-        <div class="relative z-10">
+        <div class="absolute inset-0 z-0">
           <div
-            class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-5 py-2 rounded-full border border-white/20 mb-6"
+            class="absolute top-[-20%] left-[-10%] w-[60%] h-[70%] bg-emerald-500/30 blur-[120px] rounded-full animate-pulse"
+          ></div>
+          <div
+            class="absolute bottom-[-20%] right-[-10%] w-[60%] h-[70%] bg-teal-800/20 blur-[120px] rounded-full"
+          ></div>
+          <div
+            class="absolute inset-0 opacity-[0.05]"
+            style="
+              background-image: radial-gradient(#fff 1px, transparent 1px);
+              background-size: 30px 30px;
+            "
+          ></div>
+        </div>
+
+        <div class="relative z-10 flex flex-col items-center">
+          <div
+            class="inline-flex items-center gap-3 bg-white/5 backdrop-blur-2xl px-8 py-3 rounded-2xl border border-white/10 mb-8 transform hover:scale-105 transition-transform duration-500 shadow-xl"
           >
+            <i class="fas fa-calendar-alt text-emerald-400"></i>
             <span
-              class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"
-            ></span>
-            <span class="text-[10px] font-black uppercase tracking-widest"
-              >Ramadan 1446 • The Noble Month</span
+              class="text-sm md:text-base font-black uppercase tracking-[0.4em] text-emerald-100"
             >
+              Ramadan 1446
+            </span>
           </div>
-          <h3 class="text-4xl md:text-6xl font-black leading-[1.15] mb-6">
-            Journey Through <br /><span class="text-emerald-300">Ramadan</span>
-            Weekly Videos For Kids
-          </h3>
-          <p
-            class="text-emerald-100/80 max-w-xl font-medium text-base leading-relaxed"
+
+          <h1
+            class="text-6xl md:text-[7rem] font-black leading-none tracking-tighter mb-4"
           >
-            Explore weekly video lessons in Urdu & English. Strengthen your
-            connection with the Islamic content, deepen your spirituality, and
-            empower your students with elite content.
-          </p>
+            <span class="relative">
+              <span
+                class="absolute inset-0 text-emerald-400 blur-3xl opacity-30"
+                >KIDS</span
+              >
+              <span
+                class="relative text-transparent bg-clip-text bg-gradient-to-b from-white via-emerald-100 to-emerald-400"
+              >
+                KIDS
+              </span>
+            </span>
+          </h1>
+
+          <div class="flex items-center gap-4 mt-2">
+            <div
+              class="h-[2px] w-12 bg-gradient-to-r from-transparent to-emerald-500"
+            ></div>
+            <p
+              class="text-emerald-300 font-bold uppercase tracking-[0.5em] text-[10px] md:text-xs"
+            >
+              Weekly Videos
+            </p>
+            <div
+              class="h-[2px] w-12 bg-gradient-to-l from-transparent to-emerald-500"
+            ></div>
+          </div>
+        </div>
+
+        <div
+          class="absolute left-10 top-1/2 -translate-y-1/2 opacity-10 hidden md:block"
+        >
+          <i class="fas fa-moon text-9xl -rotate-12"></i>
         </div>
         <div
-          class="absolute right-0 bottom-0 opacity-10 translate-x-1/4 translate-y-1/4"
+          class="absolute right-10 top-1/2 -translate-y-1/2 opacity-10 hidden md:block"
         >
-          <i class="fas fa-moon text-[25rem]"></i>
-        </div>
-        <div class="absolute top-10 right-20 opacity-20">
-          <i class="fas fa-star-of-life text-6xl animate-pulse"></i>
+          <i class="fas fa-star text-8xl rotate-12"></i>
         </div>
       </section>
 
@@ -323,129 +400,185 @@
     <!-- NETFLIX-STYLE VIDEO POPUP (2 Columns: Video + Questions) -->
     <div
       id="videoDetailsPopup"
-      class="netflix-popup modal-hide fixed inset-0 z-[300] flex items-center justify-center p-4 md:p-8 transition-all duration-300"
+      class="modal-hide fixed inset-0 z-[300] flex items-center justify-center p-4 md:p-8 bg-slate-900/60 backdrop-blur-md transition-all duration-300"
     >
       <div
-        class="popup-inner w-full max-w-6xl rounded-3xl overflow-hidden shadow-2xl flex flex-col md:flex-row"
+        class="popup-inner w-full max-w-6xl bg-white rounded-[2.5rem] overflow-hidden shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)] flex flex-col md:flex-row border border-white/20"
       >
-        <!-- COLUMN 1: VIDEO PLAYER -->
-        <div class="md:w-1/2 bg-black relative">
+        <div class="md:w-1/2 bg-slate-950 relative group">
           <video
             id="popupVideoPlayer"
-            class="w-full h-full object-cover min-h-[300px] md:min-h-[450px]"
+            class="w-full h-full object-cover min-h-[300px] md:min-h-[550px]"
             controls
             autoplay
           >
             <source src="" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
+
           <button
             id="closePopupBtnInside"
-            class="absolute top-4 right-4 bg-black/60 hover:bg-red-600 text-white w-10 h-10 rounded-full flex items-center justify-center transition-all backdrop-blur-sm"
+            class="absolute top-6 left-6 bg-white/10 backdrop-blur-md hover:bg-red-500 text-white w-12 h-12 rounded-2xl flex items-center justify-center transition-all duration-300 shadow-xl border border-white/20"
           >
-            <i class="fas fa-times"></i>
+            <i class="fas fa-times text-xl"></i>
           </button>
+
+          <div
+            class="absolute inset-0 pointer-events-none bg-gradient-to-t from-black/40 to-transparent"
+          ></div>
         </div>
 
-        <!-- COLUMN 2: QUESTIONS & ANSWERS -->
         <div
-          class="md:w-1/2 questions-panel p-6 md:p-8 flex flex-col overflow-y-auto custom-scroll max-h-[80vh]"
+          class="md:w-1/2 questions-panel p-8 md:p-12 flex flex-col overflow-y-auto custom-scroll max-h-[90vh] bg-slate-50/50"
         >
-          <div class="flex justify-between items-start mb-6 flex-wrap gap-3">
-            <h3 class="text-2xl font-black text-white flex items-center gap-3">
-              <i class="fas fa-question-circle text-emerald-500"></i>
-              <span id="popupVideoTitle">Questions & Answers</span>
-            </h3>
-            <button
-              id="copyQuestionsOnlyBtn"
-              class="copy-questions-btn bg-emerald-600 hover:bg-emerald-500 text-white px-5 py-2.5 rounded-full text-xs font-black tracking-wide shadow-lg flex items-center gap-2 transition-all"
+          <div class="flex flex-col gap-4 mb-8">
+            <div class="flex justify-between items-center flex-wrap gap-4">
+              <h3
+                class="text-3xl font-black text-slate-800 tracking-tight flex items-center gap-3"
+              >
+                <span class="p-2 bg-emerald-100 rounded-lg text-emerald-600">
+                  <i class="fas fa-play-circle"></i>
+                </span>
+                <span id="popupVideoTitle">Quiz Lesson</span>
+              </h3>
+
+              <button
+                id="copyQuestionsOnlyBtn"
+                class="group bg-slate-900 hover:bg-emerald-600 text-white px-6 py-3 rounded-xl text-xs font-bold uppercase tracking-widest shadow-lg flex items-center gap-2 transition-all active:scale-95"
+              >
+                <i
+                  class="fas fa-copy group-hover:rotate-12 transition-transform"
+                ></i>
+                Copy Questions
+              </button>
+            </div>
+
+            <p
+              class="text-slate-500 text-sm font-medium flex items-center gap-2 bg-white p-3 rounded-xl border border-slate-200"
             >
-              <i class="fas fa-copy"></i> COPY QUESTIONS
-            </button>
+              <i class="fas fa-info-circle text-indigo-500"></i>
+              Student instructions: Watch carefully to unlock the answers below.
+            </p>
           </div>
-          <p class="text-gray-400 text-sm mb-5 border-b border-gray-800 pb-3">
-            <i class="fas fa-info-circle"></i> Share these questions with
-            students. They must watch the video to find answers.
-          </p>
-          <div id="questionsListContainer" class="space-y-4 flex-1">
-            <!-- dynamic questions will appear here -->
-          </div>
-          <div
-            class="mt-6 pt-4 text-center text-[11px] text-gray-500 border-t border-gray-800"
-          >
-            <i class="fas fa-chalkboard-teacher"></i> Teacher Tip: Click "Copy
-            Questions" to send list via Teams/WhatsApp
+
+          <div id="questionsListContainer" class="space-y-4 flex-1"></div>
+
+          <div class="mt-10 pt-6 border-t border-slate-200">
+            <div
+              class="bg-indigo-50 rounded-2xl p-4 flex items-center gap-4 border border-indigo-100"
+            >
+              <div
+                class="bg-indigo-500 text-white w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 shadow-md"
+              >
+                <i class="fas fa-lightbulb"></i>
+              </div>
+              <p class="text-indigo-900 text-xs font-bold leading-relaxed">
+                TEACHER TIP:
+                <span class="font-medium text-indigo-700"
+                  >Paste the questions directly into your classroom chat for
+                  student engagement.</span
+                >
+              </p>
+            </div>
           </div>
         </div>
       </div>
     </div>
 
     <!-- LINKS POPUP (Urdu Videos Links For Kids) - FIXED VERSION -->
+
     <div
       id="linksPopup"
-      class="links-popup modal-hide fixed inset-0 z-[200] flex items-center justify-center bg-emerald-950/60 backdrop-blur-xl p-5 transition-all duration-300"
+      class="links-popup modal-hide fixed inset-0 z-[200] flex items-center justify-center bg-slate-900/70 backdrop-blur-md p-4 transition-all duration-300"
     >
       <div
-        class="bg-white w-full max-w-3xl rounded-[3rem] shadow-2xl overflow-hidden relative"
+        class="bg-white w-full max-w-3xl max-h-[85vh] rounded-[2.5rem] shadow-[0_35px_60px_-15px_rgba(0,0,0,0.4)] overflow-hidden relative border border-white/20 flex flex-col"
       >
         <div
-          class="absolute top-0 left-0 w-full h-3 bg-gradient-to-r from-emerald-500 via-amber-500 to-emerald-500"
+          class="h-2.5 bg-gradient-to-r from-emerald-400 via-teal-500 to-indigo-500 w-full flex-shrink-0"
         ></div>
-        <div class="p-7 md:p-9">
-          <div class="flex justify-between items-start mb-6">
+
+        <div class="p-6 md:p-10 overflow-hidden flex flex-col flex-1">
+          <div class="flex justify-between items-start mb-8">
             <div>
               <h2
-                class="text-3xl font-black tracking-tighter text-slate-800 flex items-center gap-3"
+                class="text-xl md:text-2xl font-black text-slate-800 flex items-center gap-3 uppercase tracking-tight leading-tight"
               >
-                <i class="fas fa-child text-emerald-600 text-3xl"></i>
-                <span>🔗 VIDEOS LINKS FOR This Month</span>
+                <span
+                  class="p-2.5 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center shadow-sm"
+                >
+                  <i class="fas fa-link"></i>
+                </span>
+                <span
+                  >Links &nbsp; Of &nbsp; Weekly &nbsp; Videos &nbsp; For &nbsp;
+                  Kids</span
+                >
               </h2>
-              <p class="text-slate-400 text-sm font-medium mt-1">
-                Copy and share video links directly with your students on Teams
+              <p
+                class="text-slate-500 text-xs md:text-sm font-medium mt-3 flex items-center gap-2"
+              >
+                <i class="fas fa-paper-plane text-indigo-500"></i>
+                Copy and share video links directly with students
               </p>
             </div>
+
             <button
               id="closeLinksPopupBtn"
-              class="w-10 h-10 rounded-full bg-slate-100 hover:bg-red-100 transition text-slate-500 hover:text-red-600"
+              class="w-10 h-10 rounded-xl bg-slate-100 hover:bg-red-500 text-slate-500 hover:text-white transition-all duration-300 flex items-center justify-center flex-shrink-0 border border-slate-200"
             >
-              <i class="fas fa-times"></i>
+              <i class="fas fa-times text-lg"></i>
             </button>
           </div>
-          <div class="flex flex-wrap gap-3 mb-8 border-b border-slate-100 pb-4">
+
+          <div
+            class="flex flex-wrap gap-2 mb-6 bg-slate-100 p-1.5 rounded-2xl border border-slate-200/50 flex-shrink-0"
+          >
             <button
               data-popup-week="1"
-              class="popup-week-tab active-popup-week bg-emerald-600 text-white px-6 py-2.5 rounded-full font-bold text-sm shadow-md transition-all"
+              class="popup-week-tab active-popup-week flex-1 px-4 py-3 rounded-xl text-[10px] md:text-xs uppercase tracking-widest transition-all active:scale-95"
             >
-              Week 1 Links
+              Week 1
             </button>
             <button
               data-popup-week="2"
-              class="popup-week-tab bg-slate-100 text-slate-700 px-6 py-2.5 rounded-full font-bold text-sm hover:bg-emerald-100 transition-all"
+              class="popup-week-tab flex-1 px-4 py-3 rounded-xl text-[10px] md:text-xs uppercase tracking-widest transition-all active:scale-95"
             >
-              Week 2 Links
+              Week 2
             </button>
             <button
               data-popup-week="3"
-              class="popup-week-tab bg-slate-100 text-slate-700 px-6 py-2.5 rounded-full font-bold text-sm hover:bg-emerald-100 transition-all"
+              class="popup-week-tab flex-1 px-4 py-3 rounded-xl text-[10px] md:text-xs uppercase tracking-widest transition-all active:scale-95"
             >
-              Week 3 Links
+              Week 3
             </button>
             <button
               data-popup-week="4"
-              class="popup-week-tab bg-slate-100 text-slate-700 px-6 py-2.5 rounded-full font-bold text-sm hover:bg-emerald-100 transition-all"
+              class="popup-week-tab flex-1 px-4 py-3 rounded-xl text-[10px] md:text-xs uppercase tracking-widest transition-all active:scale-95"
             >
-              Week 4 Links
+              Week 4
             </button>
           </div>
+
           <div
             id="popupLinksContent"
-            class="max-h-[400px] overflow-y-auto custom-scroll pr-2 space-y-4"
+            class="flex-1 overflow-y-auto custom-scroll pr-2 space-y-4"
           ></div>
+
           <div
-            class="mt-8 text-center text-[10px] text-slate-400 font-bold uppercase tracking-wider"
+            class="mt-6 pt-5 border-t border-slate-100 flex justify-center flex-shrink-0"
           >
-            <i class="fas fa-share-alt"></i> Click copy icon to share link
-            instantly
+            <div
+              class="inline-flex items-center gap-3 bg-emerald-50 px-5 py-2.5 rounded-full border border-emerald-100"
+            >
+              <i
+                class="fas fa-mouse-pointer text-emerald-600 text-[10px] animate-bounce"
+              ></i>
+              <span
+                class="text-[10px] text-emerald-800 font-black uppercase tracking-widest"
+              >
+                Click the link icon to copy to clipboard
+              </span>
+            </div>
           </div>
         </div>
       </div>
@@ -1105,7 +1238,7 @@
         1: [
           {
             videoNo: "01",
-            title: "Ramadan Ka Istqbaal (Welcome to Ramadan)",
+            title: "Ramadan Ka Istqbaal (Welcome to Dear Ramadan)",
             actualLink:
               "https://academy.faizan.tv/ramadan/week1/intro-urdu-kids",
           },
@@ -1217,11 +1350,8 @@
                         <h4 class="text-xl font-black tracking-tight text-slate-800 rtl-text">${video.title}</h4>
                         <p class="text-slate-500 text-sm font-medium mt-2 rtl-text">${video.description}</p>
                         <div class="mt-5 flex items-center justify-between">
-                            <div class="flex items-center gap-1 text-[11px] font-bold text-emerald-600 bg-emerald-50 px-3 py-1.5 rounded-full">
-                                <i class="fas fa-clock"></i> <span>${currentLanguage === "urdu" ? "درس" : "Lesson"} ${currentWeek}.${idx + 1}</span>
-                            </div>
-                            <button onclick="openVideoDetails(${idx})" class="text-sm font-black text-emerald-700 hover:text-emerald-900 transition flex items-center gap-1">
-                                DETAILS <i class="fas fa-arrow-right text-xs"></i>
+                            <button onclick="openVideoDetails(${idx})" class="text-sm font-black text-white hover:text-white transition flex items-center gap-1 bg-gradient-to-r from-emerald-500 to-teal-500 px-4 py-2 rounded-full shadow-md hover:shadow-lg transform hover:scale-105">
+                                Play Video <i class="fas fa-arrow-right text-xs"></i>
                             </button>
                         </div>
                     </div>
@@ -1263,15 +1393,29 @@
           questionsContainer.innerHTML = currentVideoData.qa
             .map(
               (item, i) => `
-            <div class="q-item p-4 rtl-text">
-                <div class="flex gap-3">
-                    <div class="w-6 h-6 rounded-full bg-emerald-600 text-white flex items-center justify-center text-xs font-black flex-shrink-0">${i + 1}</div>
-                    <div class="flex-1">
-                        <p class="text-white font-bold text-sm leading-relaxed">${item.question}</p>
-                        <p class="text-emerald-400 text-xs mt-2 italic border-l-2 border-emerald-600 pl-3">📖 Answer: ${item.answer}</p>
-                    </div>
-                </div>
+            <div class="q-item p-6 mb-4 bg-white border border-slate-100 rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-300 rtl-text">
+    <div class="flex gap-5">
+        <div class="w-10 h-10 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center text-lg font-bold flex-shrink-0 border border-indigo-100">
+            ${i + 1}
+        </div>
+        
+        <div class="flex-1">
+            <p class="text-slate-800 font-extrabold text-lg md:text-xl leading-snug mb-3">
+                ${item.question}
+            </p>
+            
+            <div class="bg-emerald-50 rounded-lg p-4 border-r-4 border-emerald-500">
+                <p class="text-emerald-900 font-semibold text-base flex items-center gap-2">
+                    <span class="text-xl">📖</span> 
+                    <span class="uppercase tracking-wider text-xs font-black text-emerald-600 opacity-80">Answer:</span>
+                </p>
+                <p class="text-emerald-800 text-lg mt-1 leading-relaxed">
+                    ${item.answer}
+                </p>
             </div>
+        </div>
+    </div>
+</div>
         `,
             )
             .join("");
