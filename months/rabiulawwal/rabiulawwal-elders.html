@@ -1,0 +1,790 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Faizan Academy | Ramadan Month Page - Ultimate Edition</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Gulzar&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../../assets/style/global.css" />
+    <style>
+      :root {
+        --accent: #10b981;
+        --accent-glow: rgba(16, 185, 129, 0.3);
+      }
+
+      body {
+        font-family: "Plus Jakarta Sans", sans-serif;
+        background: #f0f2f5;
+        background-image:
+          radial-gradient(
+            at 0% 0%,
+            rgba(16, 185, 129, 0.05) 0px,
+            transparent 50%
+          ),
+          radial-gradient(
+            at 100% 100%,
+            rgba(217, 119, 6, 0.05) 0px,
+            transparent 50%
+          );
+        min-height: 100vh;
+        overflow-x: hidden;
+      }
+
+      .custom-scroll::-webkit-scrollbar {
+        width: 3px;
+      }
+
+      .custom-scroll::-webkit-scrollbar-track {
+        background: transparent;
+      }
+
+      .custom-scroll::-webkit-scrollbar-thumb {
+        background: linear-gradient(
+          to bottom,
+          transparent,
+          #d97706,
+          transparent
+        );
+        border-radius: 10px;
+      }
+
+      .urdu-rtl {
+        font-family: "Gulzar", "Plus Jakarta Sans", sans-serif;
+      }
+
+      .urdu-rtl .rtl-text {
+        direction: rtl;
+        unicode-bidi: isolate-override;
+        text-align: right;
+      }
+
+      .urdu-rtl button,
+      .urdu-rtl .flex,
+      .urdu-rtl .inline-flex,
+      .urdu-rtl .grid {
+        direction: ltr;
+      }
+
+      /* Video Card Premium Style (Preserved) */
+      .video-card-premium {
+        background: white;
+        border-radius: 35px;
+        transition: all 0.5s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+        border: 1px solid #f0f0f0;
+        overflow: hidden;
+        box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.02);
+      }
+
+      .video-card-premium:hover {
+        box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.12);
+        transform: translateY(-8px);
+      }
+
+      /* Enhanced Attractive Language Tabs */
+      .lang-tab-wrapper {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 2rem;
+      }
+
+      .lang-tab {
+        transition: all 0.3s cubic-bezier(0.34, 1.2, 0.64, 1);
+        backdrop-filter: blur(4px);
+      }
+
+      .lang-tab.active-tab {
+        background: linear-gradient(135deg, #064e3b 0%, #0b5e42 100%);
+        color: white;
+        box-shadow: 0 20px 35px -12px rgba(6, 78, 59, 0.5);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .lang-tab:not(.active-tab) {
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(12px);
+        border: 1px solid white;
+        color: #1e293b;
+      }
+
+      .lang-tab:not(.active-tab):hover {
+        background: white;
+        transform: translateY(-3px);
+        box-shadow: 0 20px 30px -12px rgba(16, 185, 129, 0.2);
+        border-color: #10b981;
+      }
+
+      .week-tab {
+        transition: all 0.2s ease;
+        font-weight: 800;
+      }
+
+      .week-tab.active-week {
+        background: #10b981;
+        color: white;
+        box-shadow: 0 8px 18px rgba(16, 185, 129, 0.3);
+        transform: scale(1.02);
+      }
+
+      /* NETFLIX-STYLE PREMIUM POPUP */
+      .netflix-popup,
+      .links-popup {
+        transition: 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+      }
+
+      .modal-hide {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+      }
+
+      .netflix-popup:not(.modal-hide),
+      .links-popup:not(.modal-hide) {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+      }
+
+      .netflix-popup {
+        background: rgba(0, 0, 0, 0.85);
+        backdrop-filter: blur(12px);
+      }
+
+      .popup-inner {
+        background: #141414;
+        border-radius: 2rem;
+        overflow: hidden;
+        box-shadow: 0 40px 80px rgba(0, 0, 0, 0.6);
+      }
+
+      .questions-panel {
+        background: #1a1a1a;
+        border-left: 1px solid #2c2c2c;
+      }
+
+      .q-item {
+        background: #0f0f0f;
+        border-radius: 1rem;
+        transition: all 0.2s;
+        border: 1px solid #2a2a2a;
+      }
+
+      .q-item:hover {
+        background: #1e1e1e;
+        border-color: #10b981;
+      }
+
+      .copy-questions-btn {
+        transition: all 0.2s;
+      }
+
+      .copy-questions-btn:active {
+        transform: scale(0.96);
+      }
+
+      .link-item-card {
+        transition: all 0.2s;
+        border-left: 3px solid transparent;
+      }
+
+      .link-item-card:hover {
+        background: #f0fdf4;
+        border-left-color: #10b981;
+      }
+
+      .thumbnail-glow {
+        transition: transform 0.6s ease;
+      }
+
+      .video-card-premium:hover .thumbnail-glow {
+        transform: scale(1.03);
+      }
+    </style>
+  </head>
+
+  <body class="text-slate-800">
+    <!-- MONTH PAGE CONTENT -->
+    <section class="max-w-7xl mx-auto py-4 custom-scroll">
+      <!-- HERO SECTION -->
+      <section
+        class="relative bg-gradient-to-br from-[#064e3b] to-[#022c22] rounded-[3.5rem] p-8 md:p-12 text-white overflow-hidden mb-12 shadow-2xl shadow-emerald-900/30"
+      >
+        <div class="relative z-10">
+          <div
+            class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-5 py-2 rounded-full border border-white/20 mb-6"
+          >
+            <span
+              class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"
+            ></span>
+            <span class="text-[10px] font-black uppercase tracking-widest"
+              >Rabiul Awal 1446 • The Blessed Month</span
+            >
+          </div>
+          <h3 class="text-4xl md:text-6xl font-black leading-[1.15] mb-6">
+            Journey Through <br /><span class="text-emerald-300"
+              >Rabiul Awal</span
+            >
+            Weekly Videos For Elders
+          </h3>
+          <p
+            class="text-emerald-100/80 max-w-xl font-medium text-base leading-relaxed"
+          >
+            Explore weekly video lessons in Urdu & English. Strengthen your
+            connection with the Islamic content, deepen your spirituality, and
+            empower your students with elite content.
+          </p>
+        </div>
+        <div
+          class="absolute right-0 bottom-0 opacity-10 translate-x-1/4 translate-y-1/4"
+        >
+          <i class="fas fa-moon text-[25rem]"></i>
+        </div>
+        <div class="absolute top-10 right-20 opacity-20">
+          <i class="fas fa-star-of-life text-6xl animate-pulse"></i>
+        </div>
+      </section>
+
+      <!-- CENTER POSITION LANGUAGE TABS -->
+      <div class="lang-tab-wrapper">
+        <div
+          class="inline-flex gap-4 p-1.5 bg-white/30 backdrop-blur-sm rounded-full shadow-lg border border-white/40"
+        >
+          <button
+            id="urduTabBtn"
+            class="lang-tab px-10 py-4 rounded-full font-black text-base tracking-wide flex items-center gap-3 active-tab transition-all duration-300"
+          >
+            <i class="fas fa-language text-lg"></i>
+            <span>URDU </span>
+          </button>
+          <button
+            id="englishTabBtn"
+            class="lang-tab px-10 py-4 rounded-full font-black text-base tracking-wide flex items-center gap-3 transition-all duration-300"
+          >
+            <i class="fas fa-globe-americas text-lg"></i>
+            <span> ENGLISH </span>
+          </button>
+        </div>
+      </div>
+
+      <!-- WEEK TABS (4 Weeks) -->
+      <div class="flex flex-wrap justify-center gap-4 mb-12">
+        <button
+          data-week="1"
+          class="week-tab active-week bg-emerald-600 text-white px-9 py-3.5 rounded-[2rem] font-black text-sm shadow-xl transition-all"
+        >
+          ✨ Week 1
+        </button>
+        <button
+          data-week="2"
+          class="week-tab bg-white text-slate-700 px-9 py-3.5 rounded-[2rem] font-black text-sm shadow-md hover:bg-emerald-50 transition-all"
+        >
+          📖 Week 2
+        </button>
+        <button
+          data-week="3"
+          class="week-tab bg-white text-slate-700 px-9 py-3.5 rounded-[2rem] font-black text-sm shadow-md hover:bg-emerald-50 transition-all"
+        >
+          🕌 Week 3
+        </button>
+        <button
+          data-week="4"
+          class="week-tab bg-white text-slate-700 px-9 py-3.5 rounded-[2rem] font-black text-sm shadow-md hover:bg-emerald-50 transition-all"
+        >
+          🌟 Week 4
+        </button>
+      </div>
+
+      <!-- VIDEO GRID -->
+      <div
+        id="videoGrid"
+        class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 pb-12"
+      ></div>
+
+      <!-- LINKS BUTTON (Popup for Kids Urdu Links) -->
+      <div class="flex justify-center mt-8 mb-16">
+        <button
+          id="openLinksPopupBtn"
+          class="group bg-gradient-to-r from-amber-500 to-orange-600 hover:from-emerald-600 hover:to-teal-700 text-white px-10 py-5 rounded-[2.5rem] font-black text-lg tracking-wide shadow-2xl transition-all duration-300 flex items-center gap-4 transform hover:scale-105"
+        >
+          <i class="fas fa-link text-xl group-hover:rotate-12 transition"></i>
+          <span>🔗 VIDEOS LINKS FOR This Month</span>
+          <i
+            class="fas fa-arrow-right text-sm group-hover:translate-x-1 transition"
+          ></i>
+        </button>
+      </div>
+    </section>
+
+    <!-- NETFLIX-STYLE VIDEO POPUP (2 Columns: Video + Questions) -->
+    <div
+      id="videoDetailsPopup"
+      class="netflix-popup modal-hide fixed inset-0 z-[300] flex items-center justify-center p-4 md:p-8 transition-all duration-300"
+    >
+      <div
+        class="popup-inner w-full max-w-6xl rounded-3xl overflow-hidden shadow-2xl flex flex-col md:flex-row"
+      >
+        <!-- COLUMN 1: VIDEO PLAYER -->
+        <div class="md:w-1/2 bg-black relative">
+          <video
+            id="popupVideoPlayer"
+            class="w-full h-full object-cover min-h-[300px] md:min-h-[450px]"
+            controls
+            autoplay
+          >
+            <source src="" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          <button
+            id="closePopupBtnInside"
+            class="absolute top-4 right-4 bg-black/60 hover:bg-red-600 text-white w-10 h-10 rounded-full flex items-center justify-center transition-all backdrop-blur-sm"
+          >
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+
+        <!-- COLUMN 2: QUESTIONS & ANSWERS -->
+        <div
+          class="md:w-1/2 questions-panel p-6 md:p-8 flex flex-col overflow-y-auto custom-scroll max-h-[80vh]"
+        >
+          <div class="flex justify-between items-start mb-6 flex-wrap gap-3">
+            <h3 class="text-2xl font-black text-white flex items-center gap-3">
+              <i class="fas fa-question-circle text-emerald-500"></i>
+              <span id="popupVideoTitle">Questions & Answers</span>
+            </h3>
+            <button
+              id="copyQuestionsOnlyBtn"
+              class="copy-questions-btn bg-emerald-600 hover:bg-emerald-500 text-white px-5 py-2.5 rounded-full text-xs font-black tracking-wide shadow-lg flex items-center gap-2 transition-all"
+            >
+              <i class="fas fa-copy"></i> COPY QUESTIONS
+            </button>
+          </div>
+          <p class="text-gray-400 text-sm mb-5 border-b border-gray-800 pb-3">
+            <i class="fas fa-info-circle"></i> Share these questions with
+            students. They must watch the video to find answers.
+          </p>
+          <div id="questionsListContainer" class="space-y-4 flex-1">
+            <!-- dynamic questions will appear here -->
+          </div>
+          <div
+            class="mt-6 pt-4 text-center text-[11px] text-gray-500 border-t border-gray-800"
+          >
+            <i class="fas fa-chalkboard-teacher"></i> Teacher Tip: Click "Copy
+            Questions" to send list via Teams/WhatsApp
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- LINKS POPUP (Urdu Videos Links For Kids) - FIXED VERSION -->
+    <div
+      id="linksPopup"
+      class="links-popup modal-hide fixed inset-0 z-[200] flex items-center justify-center bg-emerald-950/60 backdrop-blur-xl p-5 transition-all duration-300"
+    >
+      <div
+        class="bg-white w-full max-w-3xl rounded-[3rem] shadow-2xl overflow-hidden relative"
+      >
+        <div
+          class="absolute top-0 left-0 w-full h-3 bg-gradient-to-r from-emerald-500 via-amber-500 to-emerald-500"
+        ></div>
+        <div class="p-7 md:p-9">
+          <div class="flex justify-between items-start mb-6">
+            <div>
+              <h2
+                class="text-3xl font-black tracking-tighter text-slate-800 flex items-center gap-3"
+              >
+                <i class="fas fa-child text-emerald-600 text-3xl"></i>
+                <span>🔗 VIDEOS LINKS FOR This Month</span>
+              </h2>
+              <p class="text-slate-400 text-sm font-medium mt-1">
+                Copy and share video links directly with your students on Teams
+              </p>
+            </div>
+            <button
+              id="closeLinksPopupBtn"
+              class="w-10 h-10 rounded-full bg-slate-100 hover:bg-red-100 transition text-slate-500 hover:text-red-600"
+            >
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
+          <div class="flex flex-wrap gap-3 mb-8 border-b border-slate-100 pb-4">
+            <button
+              data-popup-week="1"
+              class="popup-week-tab active-popup-week bg-emerald-600 text-white px-6 py-2.5 rounded-full font-bold text-sm shadow-md transition-all"
+            >
+              Week 1 Links
+            </button>
+            <button
+              data-popup-week="2"
+              class="popup-week-tab bg-slate-100 text-slate-700 px-6 py-2.5 rounded-full font-bold text-sm hover:bg-emerald-100 transition-all"
+            >
+              Week 2 Links
+            </button>
+            <button
+              data-popup-week="3"
+              class="popup-week-tab bg-slate-100 text-slate-700 px-6 py-2.5 rounded-full font-bold text-sm hover:bg-emerald-100 transition-all"
+            >
+              Week 3 Links
+            </button>
+            <button
+              data-popup-week="4"
+              class="popup-week-tab bg-slate-100 text-slate-700 px-6 py-2.5 rounded-full font-bold text-sm hover:bg-emerald-100 transition-all"
+            >
+              Week 4 Links
+            </button>
+          </div>
+          <div
+            id="popupLinksContent"
+            class="max-h-[400px] overflow-y-auto custom-scroll pr-2 space-y-4"
+          ></div>
+          <div
+            class="mt-8 text-center text-[10px] text-slate-400 font-bold uppercase tracking-wider"
+          >
+            <i class="fas fa-share-alt"></i> Click copy icon to share link
+            instantly
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // ======================== ENHANCED DATABASES ========================
+      // Video Library Database
+      const videoLibrary = {};
+      // Video Links Database
+      const urduKidsLinks = {};
+
+      // --- Global State ---
+      let currentLanguage = "urdu";
+      let currentWeek = "1";
+      let currentVideoData = null;
+
+      // Render Video Grid
+      function renderVideoGrid() {
+        const grid = document.getElementById("videoGrid");
+        const weekData = videoLibrary[currentLanguage]?.[currentWeek];
+        if (!weekData) {
+          grid.innerHTML = `<div class="col-span-full text-center py-20">No videos</div>`;
+          return;
+        }
+        grid.innerHTML = "";
+        weekData.forEach((video, idx) => {
+          const gradient =
+            idx === 0
+              ? "from-emerald-50 to-teal-50"
+              : idx === 1
+                ? "from-amber-50 to-orange-50"
+                : "from-sky-50 to-blue-50";
+          const videoId = `video-ramzan-${currentWeek}-${idx}`;
+          grid.innerHTML += `
+                <div class="video-card-premium group" data-video-index="${idx}">
+                    <div class="relative overflow-hidden rounded-[2rem] m-4 bg-gradient-to-br ${gradient} h-52 flex items-center justify-center thumbnail-glow transition-all">
+                        <img src="${video.thumbnailUrl}" class="absolute inset-0 w-full h-full object-cover rounded-[2rem]" onerror="this.style.display='none'">
+                        <button class="absolute top-4 right-4 favourite-btn bg-white/80 backdrop-blur-sm rounded-full p-2 hover:bg-white transition-all shadow-sm z-20" 
+                                onclick="event.stopPropagation(); handleVideoFav('${videoId}', '${video.title.replace(/'/g, "\\'")}', '${video.thumbnailUrl}')" 
+                                data-video-id="${videoId}">
+                            <i class="fas fa-heart text-red-400 text-lg"></i>
+                        </button>
+                        <i class="fas ${video.thumbnailIcon} text-7xl text-emerald-700/30 group-hover:text-emerald-600/50 transition-all duration-500 absolute opacity-40 group-hover:scale-110"></i>
+                        <div class="z-10 flex flex-col items-center">
+                            <div class="w-16 h-16 bg-white/80 backdrop-blur rounded-2xl flex items-center justify-center shadow-xl mb-3 cursor-pointer" onclick="openVideoDetails(${idx})">
+                                <i class="fas fa-play text-emerald-700 text-2xl ml-1"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-5 pt-2">
+                        <h4 class="text-xl font-black tracking-tight text-slate-800 rtl-text">${video.title}</h4>
+                        <p class="text-slate-500 text-sm font-medium mt-2 rtl-text">${video.description}</p>
+                        <div class="mt-5 flex items-center justify-between">
+                            <div class="flex items-center gap-1 text-[11px] font-bold text-emerald-600 bg-emerald-50 px-3 py-1.5 rounded-full">
+                                <i class="fas fa-clock"></i> <span>${currentLanguage === "urdu" ? "درس" : "Lesson"} ${currentWeek}.${idx + 1}</span>
+                            </div>
+                            <button onclick="openVideoDetails(${idx})" class="text-sm font-black text-emerald-700 hover:text-emerald-900 transition flex items-center gap-1">
+                                DETAILS <i class="fas fa-arrow-right text-xs"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `;
+        });
+
+        // Update favorite icons based on global state
+        if (window.updateFavouriteButtons) window.updateFavouriteButtons();
+      }
+
+      function handleVideoFav(id, title, image) {
+        if (window.toggleFavourite) {
+          window.toggleFavourite({
+            id: id,
+            title: title,
+            image: image,
+            link: window.location.href, // Back to this page
+          });
+        }
+      }
+
+      // Open Netflix-style Popup
+      window.openVideoDetails = (index) => {
+        const weekData = videoLibrary[currentLanguage]?.[currentWeek];
+        if (!weekData || !weekData[index]) return;
+        currentVideoData = weekData[index];
+        const videoPlayer = document.getElementById("popupVideoPlayer");
+        const videoTitleSpan = document.getElementById("popupVideoTitle");
+        const questionsContainer = document.getElementById(
+          "questionsListContainer",
+        );
+
+        videoPlayer.src = currentVideoData.videoUrl;
+        videoTitleSpan.innerText = currentVideoData.title;
+
+        // Display Questions AND Answers in UI
+        if (currentVideoData.qa && currentVideoData.qa.length) {
+          questionsContainer.innerHTML = currentVideoData.qa
+            .map(
+              (item, i) => `
+            <div class="q-item p-4 rtl-text">
+                <div class="flex gap-3">
+                    <div class="w-6 h-6 rounded-full bg-emerald-600 text-white flex items-center justify-center text-xs font-black flex-shrink-0">${i + 1}</div>
+                    <div class="flex-1">
+                        <p class="text-white font-bold text-sm leading-relaxed">${item.question}</p>
+                        <p class="text-emerald-400 text-xs mt-2 italic border-l-2 border-emerald-600 pl-3">📖 Answer: ${item.answer}</p>
+                    </div>
+                </div>
+            </div>
+        `,
+            )
+            .join("");
+        } else {
+          questionsContainer.innerHTML =
+            '<p class="text-gray-400">No questions available for this video.</p>';
+        }
+
+        document
+          .getElementById("videoDetailsPopup")
+          .classList.remove("modal-hide");
+        videoPlayer.play();
+      };
+
+      // Copy Questions Only (No Answers)
+      document
+        .getElementById("copyQuestionsOnlyBtn")
+        ?.addEventListener("click", () => {
+          if (
+            currentVideoData &&
+            currentVideoData.qa &&
+            currentVideoData.qa.length
+          ) {
+            // Extract ONLY questions, no answers
+            const questionsOnly = currentVideoData.qa
+              .map((item, i) => `${i + 1}. ${item.question}`)
+              .join("\n\n");
+            navigator.clipboard
+              .writeText(questionsOnly)
+              .then(() => {
+                alert(
+                  "✅ Only Questions copied! Send to students via Teams.\n\nStudents must watch the video to find answers.",
+                );
+              })
+              .catch(() => {
+                alert("Failed to copy. Please try again.");
+              });
+          } else {
+            alert("No questions available for this video.");
+          }
+        });
+
+      // Close video popup
+      function closeVideoPopup() {
+        document
+          .getElementById("videoDetailsPopup")
+          .classList.add("modal-hide");
+        const videoPlayer = document.getElementById("popupVideoPlayer");
+        if (videoPlayer) videoPlayer.pause();
+      }
+      document
+        .getElementById("closePopupBtnInside")
+        ?.addEventListener("click", closeVideoPopup);
+      document
+        .getElementById("videoDetailsPopup")
+        ?.addEventListener("click", (e) => {
+          if (e.target === document.getElementById("videoDetailsPopup"))
+            closeVideoPopup();
+        });
+
+      // Language & Week Toggle Logic
+      function setupTabs() {
+        document.getElementById("urduTabBtn").addEventListener("click", () => {
+          currentLanguage = "urdu";
+          updateActiveLanguageTab("urdu");
+          renderVideoGrid();
+        });
+        document
+          .getElementById("englishTabBtn")
+          .addEventListener("click", () => {
+            currentLanguage = "english";
+            updateActiveLanguageTab("english");
+            renderVideoGrid();
+          });
+        document.querySelectorAll(".week-tab").forEach((btn) => {
+          btn.addEventListener("click", () => {
+            currentWeek = btn.getAttribute("data-week");
+            updateActiveWeekTab(currentWeek);
+            renderVideoGrid();
+          });
+        });
+      }
+      function updateActiveLanguageTab(lang) {
+        const u = document.getElementById("urduTabBtn"),
+          e = document.getElementById("englishTabBtn");
+        if (lang === "urdu") {
+          u.classList.add("active-tab");
+          e.classList.remove("active-tab");
+        } else {
+          e.classList.add("active-tab");
+          u.classList.remove("active-tab");
+        }
+        const rtlContainers = [
+          document.getElementById("videoGrid"),
+          document.getElementById("questionsListContainer"),
+        ];
+        rtlContainers.forEach((el) => {
+          if (el) el.classList.toggle("urdu-rtl", lang === "urdu");
+        });
+      }
+      function updateActiveWeekTab(week) {
+        document.querySelectorAll(".week-tab").forEach((btn) => {
+          if (btn.getAttribute("data-week") === week) {
+            btn.classList.add("active-week", "bg-emerald-600", "text-white");
+            btn.classList.remove("bg-white", "text-slate-700");
+          } else {
+            btn.classList.remove("active-week", "bg-emerald-600", "text-white");
+            btn.classList.add("bg-white", "text-slate-700");
+          }
+        });
+      }
+
+      // LINKS POPUP - FIXED VERSION (Properly working close button)
+      function initLinksPopup() {
+        const popup = document.getElementById("linksPopup");
+        const openBtn = document.getElementById("openLinksPopupBtn");
+        const closeBtn = document.getElementById("closeLinksPopupBtn");
+
+        // Open popup
+        openBtn.onclick = () => {
+          popup.classList.remove("modal-hide");
+          renderPopupLinksContent("1");
+          // Set active week tab in popup
+          document.querySelectorAll(".popup-week-tab").forEach((btn) => {
+            if (btn.getAttribute("data-popup-week") === "1") {
+              btn.classList.add(
+                "active-popup-week",
+                "bg-emerald-600",
+                "text-white",
+              );
+              btn.classList.remove("bg-slate-100", "text-slate-700");
+            } else {
+              btn.classList.remove(
+                "active-popup-week",
+                "bg-emerald-600",
+                "text-white",
+              );
+              btn.classList.add("bg-slate-100", "text-slate-700");
+            }
+          });
+        };
+
+        // Close popup
+        closeBtn.onclick = () => {
+          popup.classList.add("modal-hide");
+        };
+
+        // Close on background click
+        popup.addEventListener("click", (e) => {
+          if (e.target === popup) popup.classList.add("modal-hide");
+        });
+
+        // Week tabs inside popup
+        document.querySelectorAll(".popup-week-tab").forEach((btn) => {
+          btn.addEventListener("click", () => {
+            const week = btn.getAttribute("data-popup-week");
+            document.querySelectorAll(".popup-week-tab").forEach((b) => {
+              b.classList.remove(
+                "active-popup-week",
+                "bg-emerald-600",
+                "text-white",
+              );
+              b.classList.add("bg-slate-100", "text-slate-700");
+            });
+            btn.classList.remove("bg-slate-100", "text-slate-700");
+            btn.classList.add(
+              "active-popup-week",
+              "bg-emerald-600",
+              "text-white",
+            );
+            renderPopupLinksContent(week);
+          });
+        });
+      }
+
+      function renderPopupLinksContent(week) {
+        const container = document.getElementById("popupLinksContent");
+        const data = urduKidsLinks[week];
+        if (!data) {
+          container.innerHTML =
+            '<div class="text-center py-8">No links available</div>';
+          return;
+        }
+        container.innerHTML = data
+          .map(
+            (item) => `
+            <div class="link-item-card bg-slate-50 rounded-2xl p-4 flex justify-between items-center gap-4">
+                <div class="flex-1">
+                    <span class="text-[10px] font-black bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded-full">Video ${item.videoNo}</span>
+                    <h4 class="font-black text-slate-800 mt-1">${item.title}</h4>
+                    <p class="text-slate-500 text-xs truncate mt-1">${item.actualLink}</p>
+                </div>
+                <button onclick="copyLinkToClipboard('${item.actualLink}')" class="copy-link-btn bg-white hover:bg-emerald-500 hover:text-white text-emerald-700 p-3 rounded-xl shadow-md transition-all">
+                    <i class="fas fa-copy"></i>
+                </button>
+            </div>
+        `,
+          )
+          .join("");
+      }
+
+      window.copyLinkToClipboard = (link) => {
+        navigator.clipboard.writeText(link);
+        alert("✅ Link copied to clipboard!");
+      };
+
+      // Initialize everything when layout is ready
+      function initPage() {
+        renderVideoGrid();
+        if (window.updateFavouriteButtons) window.updateFavouriteButtons();
+        setupTabs();
+        initLinksPopup();
+        updateActiveLanguageTab("urdu");
+        updateActiveWeekTab("1");
+      }
+
+      // Wait for layout injection
+      window.addEventListener("layoutReady", initPage);
+
+      // Fallback for direct loads
+      if (
+        document.body.classList.contains("layout-injected") ||
+        document.getElementById("layout-wrapper")
+      ) {
+        initPage();
+      }
+    </script>
+    <script src="../../assets/function/layout.js"></script>
+    <script src="../../assets/function/app.js"></script>
+  </body>
+</html>
